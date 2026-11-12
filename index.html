@@ -1,11 +1,15 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Yes, your child can and should enjoy school</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800&display=swap">
 <style>
-  :root { --bg:#fbfaf7; --surface:#ffffff; --fg:#1d2328; --muted:#5f6a73; --rule:#e2e0da; --accent:#0f5c63; --accent-ink:#0b464c; --accent-soft:#e3f0f1; --warm:#f6efe3; --warm-ink:#6b5533; --green:#edf2e4; --green-ink:#4a5e2c; --cell:#f6f5f1; --ok:#1f6b3a; --no:#8a2d2d; --shadow: 0 1px 2px rgba(20,30,30,.06), 0 6px 18px rgba(20,30,30,.05); }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#121618; --surface:#1a2023; --fg:#e8ebee; --muted:#a3adb6; --rule:#313a40; --accent:#8fd0d6; --accent-ink:#bfe6ea; --accent-soft:#1c3337; --warm:#2a241a; --warm-ink:#dcc9a0; --green:#1f291a; --green-ink:#c0d49a; --cell:#1f262a; --ok:#8fd6a5; --no:#f0a3a3; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.3); color-scheme: dark; } }
-  :root[data-theme="dark"] { --bg:#121618; --surface:#1a2023; --fg:#e8ebee; --muted:#a3adb6; --rule:#313a40; --accent:#8fd0d6; --accent-ink:#bfe6ea; --accent-soft:#1c3337; --warm:#2a241a; --warm-ink:#dcc9a0; --green:#1f291a; --green-ink:#c0d49a; --cell:#1f262a; --ok:#8fd6a5; --no:#f0a3a3; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.3); color-scheme: dark; }
+  :root { --bg:#fbfaf7; --surface:#ffffff; --fg:#1d2328; --muted:#4a545c; --ring:#8f8c84; --rule:#e2e0da; --accent:#0f5c63; --accent-ink:#0b464c; --accent-soft:#e3f0f1; --warm:#f6efe3; --warm-ink:#6b5533; --green:#edf2e4; --green-ink:#4a5e2c; --cell:#f6f5f1; --ok:#1f6b3a; --no:#8a2d2d; --shadow: 0 1px 2px rgba(20,30,30,.06), 0 6px 18px rgba(20,30,30,.05); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#121618; --surface:#1a2023; --fg:#e8ebee; --muted:#b4bcc4; --ring:#6b747b; --rule:#313a40; --accent:#8fd0d6; --accent-ink:#bfe6ea; --accent-soft:#1c3337; --warm:#2a241a; --warm-ink:#dcc9a0; --green:#1f291a; --green-ink:#c0d49a; --cell:#1f262a; --ok:#8fd6a5; --no:#f0a3a3; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.3); color-scheme: dark; } }
+  :root[data-theme="dark"] { --bg:#121618; --surface:#1a2023; --fg:#e8ebee; --muted:#b4bcc4; --ring:#6b747b; --rule:#313a40; --accent:#8fd0d6; --accent-ink:#bfe6ea; --accent-soft:#1c3337; --warm:#2a241a; --warm-ink:#dcc9a0; --green:#1f291a; --green-ink:#c0d49a; --cell:#1f262a; --ok:#8fd6a5; --no:#f0a3a3; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.3); color-scheme: dark; }
   * { box-sizing: border-box; }
   body { background: var(--bg); color: var(--fg); font-family: "Nunito Sans", -apple-system, "Helvetica Neue", Arial, sans-serif; font-size: 17px; line-height: 1.6; margin: 0; padding-block: 28px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
   main { max-width: 700px; margin: 0 auto; min-width: 0; }
@@ -81,6 +85,17 @@
   :root[data-theme="dark"] .cascade li.hit { color: #0f1a1c; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cascade li.hit { color: #0f1a1c; } }
   @media (max-width: 600px) { .cascade { grid-template-columns: 1fr; gap: 14px; } .cascade li + li::before { content: "\2193"; left: 50%; top: -14px; transform: translateX(-50%); } }
+  .gist { font-size: 1.12rem; font-weight: 600; line-height: 1.5; margin: 0 0 14px; }
+  details.more { margin: 0 0 8px; }
+  details.more > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 800; font-size: .95rem; padding: 8px 14px; border: 2px solid var(--accent); border-radius: 999px; user-select: none; }
+  details.more > summary::-webkit-details-marker { display: none; }
+  details.more > summary::before { content: "+"; font-size: 1.1rem; line-height: 1; }
+  details.more[open] > summary::before { content: "\2212"; }
+  details.more > summary .close { display: none; }
+  details.more[open] > summary .open { display: none; }
+  details.more[open] > summary .close { display: inline; }
+  details.more[open] > summary { margin-bottom: 18px; }
+  details.more > :nth-child(2) { margin-top: 0; }
   .fig { margin: 22px 0 26px; }
   .fig svg text { font-family: inherit; }
   figcaption { font-size: .9rem; color: var(--muted); text-align: center; max-width: 46ch; margin: 10px auto 0; }
@@ -102,9 +117,21 @@
     td { border: 0; border-top: 1px solid var(--rule); padding: 10px 14px; }
     tr > td:first-child { border-top: 0; }
     td.k { width: auto; font-size: 1.02rem; }
+    table.compare tr { display: grid; grid-template-columns: 1fr 1fr; }
+    table.compare tr:first-child { display: grid; background: var(--accent-soft); border-radius: 10px; border: 0; }
+    table.compare tr:first-child th:first-child { display: none; }
+    table.compare tr:first-child th { display: block; padding: 8px 12px; border: 0; font-size: .78rem; }
+    table.compare tr:first-child th + th + th { border-left: 1px solid var(--rule); }
+    table.compare td.k { grid-column: 1 / -1; border-top: 0; padding: 8px 12px; font-size: .95rem; }
+    table.compare td { padding: 8px 12px 12px; font-size: .95rem; }
+    table.compare td:last-child { border-left: 1px solid var(--rule); }
+    table.compare td[data-label]::before { display: none; }
     td[data-label]::before { content: attr(data-label); display: block; font-size: .74rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 3px; }
   }
 </style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
 <main>
 
 
@@ -129,7 +156,9 @@
 <p class="sub">This guide explains what the school must do, what good support looks like, and how to ask for it. Written by a parent, for parents, at NSW schools. General information, not legal advice. November 2026.</p>
 
 <h2 id="s1"><span class="n">1</span><span>Start here: a neuroaffirming view</span></h2>
-<div class="tw"><table>
+<p class="gist">Two ways to see your child: as a mind that works differently, or as a set of deficits. The first is the one the school is required to use.</p>
+<details class="more"><summary><span class="open">Read more</span><span class="close">Show less</span></summary>
+<div class="tw"><table class="compare">
   <tr><th style="width:24%"></th><th>Neuroaffirming</th><th>Medical model</th></tr>
   <tr><td class="k">Difference is</td><td>Natural variation in how a mind works</td><td>A deficit, measured against an imagined norm</td></tr>
   <tr><td class="k">Where problems sit</td><td>In the fit between the child and the setting</td><td>In the child</td></tr>
@@ -138,14 +167,17 @@
   <tr><td class="k">Masking</td><td>The child should not have to hide who they are</td><td>Appearing typical is treated as progress</td></tr>
   <tr><td class="k">Specialist help</td><td>Real help for real difficulties, such as a reading disorder</td><td>Aimed at reducing symptoms and difference</td></tr>
 </table></div>
+</details>
 
 <h2 id="s2"><span class="n">2</span><span>Make disability the central lens for understanding your child's experience</span></h2>
+<p class="gist">Attendance, marks, behaviour, friendships and health are not separate problems. They are symptoms of how well the school has adjusted for the disability. Ask two things every time: were the adjustments adequate, and was I consulted?</p>
+<details class="more"><summary><span class="open">Read more</span><span class="close">Show less</span></summary>
 <p>Expect a medical-model school to treat attendance, behaviour, mental health, marks and friendships as separate matters, each with its own department, form and person. Expect the adjustments to be minimal, reactive, dependent on the child asking, and visible to peers. Expect nobody to say the word disability.</p>
 <p>Do not take the year in those pieces. Put the disability at the centre and read every incident through it. Ask two questions first, every time: were the adjustments adequate, and was I consulted?</p>
 
 <figure class="fig"><svg viewBox="0 0 600 600" role="img" aria-labelledby="figt figd" style="width:100%;max-width:520px;height:auto;display:block;margin:0 auto">
 <title id="figt">The disability is the centre</title><desc id="figd">Concentric circles. Centre: your child and their disability. Ring: how each subject is designed, delivered and assessed. Outer ring: attendance, engagement, marks, behaviour, mental and physical health, friendships, discipline, shown as symptoms of what happens in the middle.</desc>
-<circle cx="300" cy="300" r="250" fill="var(--bg)" stroke="var(--rule)" stroke-width="2" stroke-dasharray="6 6"/>
+<circle cx="300" cy="300" r="250" fill="var(--bg)" stroke="var(--ring)" stroke-width="2.5" stroke-dasharray="6 6"/>
 <circle cx="300" cy="300" r="150" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
 <circle cx="300" cy="300" r="78" fill="var(--accent)"/>
 <text x="300" y="290" text-anchor="middle" font-size="19" font-weight="800" fill="var(--bg)">Your child</text>
@@ -210,8 +242,11 @@
   </ul>
   <p><b>Reply to the disability, not to the incident.</b></p>
 </div>
+</details>
 
 <h2 id="s3"><span class="n">3</span><span>How it feels, and what that tells you</span></h2>
+<p class="gist">If you are confused, dispirited and feel the fault is yours, that is the experience of discrimination, not a sign you missed something.</p>
+<details class="more"><summary><span class="open">Read more</span><span class="close">Show less</span></summary>
 <div class="box" style="background:#eef2e6;border-left-color:#4a5e2c;">
   <p><b>Count your confusion as evidence.</b> A school with the neuroaffirming approach embedded creates minimal friction. You, your child and the school are in a collaborative process, curious and experimental together about how to design your child's interaction with the physical, learning and social environment so that their education goes well. If you cannot describe that process for your child's school, it is not because you missed something. It is because it is not there. Your confusion is information about the school, not about you.</p>
 </div>
@@ -219,9 +254,11 @@
 <div class="box">
   <p><b>If you feel confused, dispirited, worn down, as though you and your child are not welcome and the fault is somehow yours:</b> that is the experience of discrimination. It is the experience the Act and the Standards were written to prevent.</p>
 </div>
-
+</details>
 
 <h2 id="s4"><span class="n">4</span><span>Your child's school has a legal duty to support them</span></h2>
+<p class="gist">Autism, ADHD and learning disorders are disabilities under the Disability Discrimination Act. Every NSW school must consult you, decide, change its teaching and review. It is the law, not a favour.</p>
+<details class="more"><summary><span class="open">Read more</span><span class="close">Show less</span></summary>
 <ul>
   <li>Autism, ADHD and dyslexia count as disability under the <a href="https://www.legislation.gov.au/C2004A04426/latest">Disability Discrimination Act 1992</a>. Every NSW school must comply, private schools included.</li>
   <li>The <a href="https://www.legislation.gov.au/F2005L00767/latest/text">Disability Standards for Education 2005</a> set out what the school must do. Once the school knows about your child's disability, it must ask, decide, change and review.</li>
@@ -246,8 +283,11 @@
 <div class="box">
   <p><b>Most children with neurodivergence and learning disabilities can thrive in mainstream schooling with this approach in place</b> (Hehir et al. 2016, 280 studies; Disability Royal Commission 2023). The Standards exist to make this happen, in every school, in every sector. If it is not happening, get clear on what the Standards require, put it in writing, advocate. Stay open to other schooling options as a solution, but choose them from strength, once the school has met its obligations, not because it hasn't.</p>
 </div>
+</details>
 
 <h2 id="s5"><span class="n">5</span><span>Collaborative practice: what good support looks like</span></h2>
+<p class="gist">Good support is a plan built with you and your child, written down, checked before each term and reviewed on set dates.</p>
+<details class="more"><summary><span class="open">Read more</span><span class="close">Show less</span></summary>
 <p>This is the aim of working together. It goes beyond the legal minimum, and your child's own view is part of every step.</p>
 <ol class="journey">
   <li><span class="jn">A</span><div><b>Assemble the clinical team</b><p>You need a diagnosis, and treating clinicians who know your child over time. They put their recommendations to the school in writing, and can advise you on which adjustments are reasonable and effective for your child.</p></div></li>
@@ -260,8 +300,11 @@
   <li class="loop"><span class="jn">&#8635;</span><div><b>Then start again</b><p>The journey repeats every term, after every incident, and whenever anything changes.</p></div></li>
 </ol>
 <p class="small">The Standards support steps E and F. Camps, excursions and other activities must be designed to include your child, and teaching can include building disability-specific skills.</p>
+</details>
 
 <h2 id="s6"><span class="n">6</span><span>A diagnosis is where the method starts, not where it ends</span></h2>
+<p class="gist">The assessment predicts which tasks will cost your child more. Use it to ask for the adjustment before the task, not to explain the mark afterwards.</p>
+<details class="more"><summary><span class="open">Read more</span><span class="close">Show less</span></summary>
 <p>A diagnosis predicts some of what your child will find hard. It does not say what this child will find hard in this classroom, this year. That comes from building a profile: the full assessment, read line by line against the school day, so that each score predicts a kind of task that will cost more and each prediction becomes an adjustment you ask for before the task, not an explanation afterwards. No school does this translation for you. It is the core of advocacy.</p>
 <p>The profile is never finished. Children change by definition, and the school should be adding to it: an attuned teacher sees things in the classroom that no assessment can. When your child meets a barrier that neither you nor the school predicted or understands, the profile is incomplete, not the child. Go back for more: a language assessment, an executive function profile, a sensory profile, an occupational therapy view. Each one turns a mystery into a prediction.</p>
 <div class="tw"><table>
@@ -276,8 +319,11 @@
   <tr><td class="k">Very high working memory or general ability alongside a weakness</td><td>Marks that look fine while a gap goes unnoticed; reproducing what was shown without understanding it</td><td>Assessment that tests understanding, not recall; extension where the strength is; the weakness addressed, not masked</td></tr>
 </table></div>
 <p class="small">Your child's assessment already predicts where school will be hard. Use it to ask before the task, not explain after.</p>
+</details>
 
 <h2 id="s7"><span class="n">7</span><span>Children are exquisite experts on their own experience</span></h2>
+<p class="gist">Your child shows you when school is not working, usually through behaviour before words. Ask them in easy ways, and write down what they say.</p>
+<details class="more"><summary><span class="open">Read more</span><span class="close">Show less</span></summary>
 <p>Children show you when school is not working, often through behaviour before they have the words. Watch for:</p>
 <div class="two">
 <ul>
@@ -291,8 +337,11 @@
 </ul>
 </div>
 <p>Ask in easy ways: in the car, side by side, in writing or in pictures. Write down their words, with the date.</p>
+</details>
 
 <h2 id="s8"><span class="n">8</span><span>What you do: three steps</span></h2>
+<p class="gist">Know the grounds, get the evidence, put the request in writing. Keep a dated record of everything.</p>
+<details class="more"><summary><span class="open">Read more</span><span class="close">Show less</span></summary>
 <div class="tw"><table>
   <tr><th style="width:24%">Step</th><th>What it means</th></tr>
   <tr><td class="k">1. Know the grounds</td><td>A request rests on three things: the legal duty, the clinical evidence for the need, and a dated record of what the school was told and when.</td></tr>
@@ -309,8 +358,11 @@
   <tr><td>After every meeting or call, send a summary and ask the school to correct anything wrong.</td><td>It creates a record both sides have seen.</td></tr>
   <tr><td>Take a support person to meetings.</td><td>They can take notes and notice what you miss.</td></tr>
 </table></div>
+</details>
 
 <h2 id="s9"><span class="n">9</span><span>Bullying and exclusion</span></h2>
+<p class="gist">Nearly half of autistic children are bullied. Report it in writing. The school must act, and discipline must take the disability into account.</p>
+<details class="more"><summary><span class="open">Read more</span><span class="close">Show less</span></summary>
 <ul>
   <li>Bullying is common. Across 17 studies, 44% of autistic students were bullied at school (Maïano et al. 2016).</li>
   <li>Signs include reluctance, avoiding certain places or times, and not wanting to talk about school.</li>
@@ -318,7 +370,11 @@
   <li>The school must have strategies to prevent disability harassment. There is no hardship exception to this duty.</li>
   <li>Before any discipline, the school must ask whether the behaviour relates to the disability and whether adjustments were in place. Being asked to keep your child home "until it's sorted" is a suspension without the paperwork. Ask for it in writing.</li>
 </ul>
+</details>
+
 <h2 id="s10"><span class="n">10</span><span>Attendance: think about load</span></h2>
+<p class="gist">Reluctance is an early warning. Ask what the load is before you push for a return.</p>
+<details class="more"><summary><span class="open">Read more</span><span class="close">Show less</span></summary>
 <ul>
   <li>Reluctance is an early warning. Act then, before it becomes refusal.</li>
   <li>Ask: what is the load, and at what point in the day?</li>
@@ -331,8 +387,11 @@
   <tr><td>How each subject is taught and assessed: reading and writing load, pace, dual-task formats, language subjects. Then noise, cold-calling, assemblies, timetable order, handwriting.</td><td>Size, crowds, pace.</td></tr>
   <tr><td><b>The school must adjust it.</b></td><td>It cannot be adjusted away. A different setting is then a fair answer.</td></tr>
 </table></div>
+</details>
 
 <h2 id="s11"><span class="n">11</span><span>How you'll know it's working</span></h2>
+<p class="gist">Your child can say how they learn best. Problems sit in the setting, not in them. Nobody at the school is surprised by anything in the plan.</p>
+<details class="more"><summary><span class="open">Read more</span><span class="close">Show less</span></summary>
 <h3>For the child</h3>
 <div class="tw"><table>
   <tr><th style="width:22%">Area</th><th class="ok" style="width:39%">Working</th><th class="no">Not working</th></tr>
@@ -352,8 +411,11 @@
   <tr><td class="k">Trying and testing</td><td>The team tries a change, checks its effect on what it was meant to fix, and asks why it worked or did not.</td><td>Changes are made once and never checked, or nothing new is tried.</td></tr>
   <tr><td class="k">Communication</td><td>Clinicians, school and home share the same information.</td><td>Each works alone. The parent carries the messages.</td></tr>
 </table></div>
+</details>
 
 <h2 id="s12"><span class="n">12</span><span>If it still doesn't change</span></h2>
+<p class="gist">Write to the person who holds the plan, then the principal, then the complaints policy, then the Australian Human Rights Commission. Free advocacy services can help at every step.</p>
+<details class="more"><summary><span class="open">Read more</span><span class="close">Show less</span></summary>
 <div class="two">
 <div>
 <ol style="margin:0 0 6pt 0; padding-left:1.2em;">
@@ -383,6 +445,7 @@
 </ul>
 </div>
 </div>
+</details>
 
 <p class="footer">General information for parents, not legal advice. Free help: Family Advocacy NSW (family-advocacy.com), Australian Centre for Disability Law (disabilitylaw.org.au), Australian Human Rights Commission 1300 656 419.</p>
 
@@ -394,7 +457,7 @@
     if(!btn||!nav) return;
     function set(open){ nav.hidden=!open; btn.setAttribute('aria-expanded', open?'true':'false'); }
     btn.addEventListener('click', function(){ set(nav.hidden); });
-    nav.addEventListener('click', function(e){ if(e.target.closest('a')) set(false); });
+    nav.addEventListener('click', function(e){ var a=e.target.closest('a'); if(a){ set(false); var sec=document.querySelector(a.getAttribute('href')); var d=sec&&sec.parentElement.querySelector(a.getAttribute('href')+' ~ details.more'); } });
     document.addEventListener('click', function(e){ if(!e.target.closest('.bar')) set(false); });
     document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
   })();
@@ -424,5 +487,5 @@
     });
   });
 </script>
-
-</body></html>
+</body>
+</html>
