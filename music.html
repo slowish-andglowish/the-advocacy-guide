@@ -142,6 +142,12 @@
   .course .subset .n { width: 40px; height: 40px; font-size: .85rem; background: var(--tint); color: var(--ink); }
   .upnext { text-align: center; }
   table.lt tr:first-child th:last-child { background: var(--lime); color: #25232b; }
+  .tpanel { border: 2px solid color-mix(in srgb, var(--ink) 40%, transparent); background: color-mix(in srgb, var(--ink) 7%, var(--surface)); border-radius: 20px; padding: 18px 18px 14px; margin: 22px 0 26px; }
+  .tpanel > :first-child { margin-top: 0; }
+  .tpanel > :last-child { margin-bottom: 0; }
+  .tpanel .toggle { background: var(--surface); box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 18%, transparent); }
+  .tpanel .tw, .tpanel .circfig, .tpanel .chart { margin-left: 0; margin-right: 0; }
+  @media (max-width: 640px) { .tpanel { padding: 12px 10px 10px; border-radius: 16px; } }
   table.lt ul { margin: 0; padding-left: 1.1em; } table.lt li { margin: 0 0 4px; } table.lt td { vertical-align: top; }
   @media (max-width: 700px) { .circfig { padding: 10px 8px 16px; } .circfig svg { margin: 0 -4px; width: calc(100% + 8px); } }
   @media (max-width: 700px) { .chain { grid-template-columns: 1fr; } .cascade { grid-template-columns: 1fr; gap: 16px; } .cascade li + li::before { content: "\2193"; left: 50%; top: -27px; transform: translateX(-50%); background: none; font-size: 1.1rem; }
@@ -358,6 +364,7 @@
 </div></section><section class="sec reveal" id="s1"><div class="col"><div class="head"><span class="num">1</span><h2>The child's profile, then the task laid over it</h2></div>
 <p>Each bar is a percentile: 50 is exactly average, and the grey band is the average range (25th to 75th). Switch on the task to see which abilities it requires.</p>
 
+<div class="tpanel">
 <div class="toggle" role="group" aria-label="Chart view">
   <button type="button" data-view="child" aria-pressed="true">The child</button>
   <button type="button" data-view="task" aria-pressed="false">The child + the task</button>
@@ -462,6 +469,7 @@
   <span><i class="sw ws"></i>Task requires a strength</span>
   <span><i class="sw wp"></i>Task requires a skill that, for this child, acts as a barrier</span>
   <span><i class="sw wu"></i>Task requires something nobody knows</span>
+</div>
 </div>
 
 </div></section><section class="sec reveal" id="s2"><div class="col"><div class="head"><span class="num">2</span><h2>What the overlay shows</h2></div>
