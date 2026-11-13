@@ -99,7 +99,8 @@
   @media (max-width: 700px) { .course li.sub { margin-left: 24px; } }
   .sublinks { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 18px; }
   .sublinks a { border: 1.5px solid var(--line); border-radius: 999px; padding: 10px 20px; text-decoration: none; font-weight: 600; font-size: .95rem; }
-  .nextprev { display: flex; justify-content: space-between; gap: 12px; margin: 72px auto 0; flex-wrap: wrap; max-width: 660px; }
+  .nextprev { display: flex; justify-content: center; gap: 12px; margin: 28px auto 0; flex-wrap: wrap; max-width: 660px; }
+  .nextprev a { font-size: .92rem; padding: 10px 20px !important; }
   .nextprev a { font-weight: 600; text-decoration: none; border: 1.5px solid var(--line); border-radius: 999px; padding: 12px 24px; }
   .footer { font-size: .9rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 18px; margin: 72px auto 0; max-width: 660px; }
 
@@ -138,7 +139,8 @@
   .course .subset li { margin: 0 0 10px; }
   .course .subset .n { width: 40px; height: 40px; font-size: .85rem; background: var(--tint); color: var(--ink); }
   .upnext { text-align: center; }
-  @media (max-width: 700px) { .chain { grid-template-columns: 1fr; } .cascade { grid-template-columns: 1fr; gap: 16px; } .cascade li + li::before { content: "\2193"; left: 50%; top: -15px; transform: translateX(-50%); } .course .subset { margin-left: 10px; padding-left: 16px; } }
+  @media (max-width: 700px) { .chain { grid-template-columns: 1fr; } .cascade { grid-template-columns: 1fr; gap: 16px; } .cascade li + li::before { content: "\2193"; left: 50%; top: -27px; transform: translateX(-50%); background: none; font-size: 1.1rem; }
+    .cascade { gap: 30px; } .cascade li { border-top-width: 1px; padding: 18px 20px; font-size: .98rem; border-radius: 16px; } .cascade li.hit { padding: 20px; } .course .subset { margin-left: 10px; padding-left: 16px; } }
   .hl { --hl1: rgba(222,244,140,.95); --hl2: rgba(206,236,105,.9); font-weight: 600; padding: 0 .25em; margin: 0 -.1em; border-radius: .2em .6em .3em .8em; background-image: linear-gradient(101deg, transparent 0%, var(--hl1) 2.5%, var(--hl2) 60%, var(--hl1) 94%, transparent 100%); background-size: 100% 58%; background-position: 0 92%; background-repeat: no-repeat; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hl { --hl1: rgba(160,185,60,.55); --hl2: rgba(150,175,50,.6); } }
   :root[data-theme="dark"] .hl { --hl1: rgba(160,185,60,.55); --hl2: rgba(150,175,50,.6); }
@@ -160,7 +162,10 @@
     body { font-size: 18.5px; }
     .cards, .two { grid-template-columns: 1fr; }
     .cycle { grid-template-columns: 1fr 1fr; }
-    nav.links { gap: 4px 16px; }
+    header.top { flex-direction: column; align-items: center; gap: 16px; padding: 22px 0 10px; }
+    nav.links { justify-content: center; gap: 7px 6px; font-size: .8rem; }
+    nav.links a, nav.links span { padding: 6px 10px; border: 1px solid var(--rule); border-radius: 999px; background: var(--surface); }
+    nav.links a[aria-current] { background: var(--lime); border-color: var(--lime); color: #25232b; text-decoration: none; }
     table, tr, th, td { display: block; width: 100%; }
     table { border: 0; border-radius: 0; overflow: visible; }
     tr:first-child:has(th) { display: none; }
@@ -488,7 +493,7 @@
   <p><b>About the task.</b> From the school's task sheet (Year 5 Music, Semester 1 2026). The report gives one result for both parts; how the 8 marks split between performing and listening is not known.</p>
   <p><b>About the evidence.</b> Measured scores are from standardised testing (WISC-V and WIAT-III) at ages 6 and 7, before ADHD medication. The pattern is the best evidence held; the levels may have changed since, particularly processing speed. "Hears pitch and rhythm" is a parent's observation. Which abilities the task requires, and how heavily, is a judgement from the design of the task, not a measurement. None of the tests listed measure musical ability.</p>
   <p>General information for parents, not clinical or legal advice. November 2026.</p>
-</div></div></section><div class="nextprev"><a href="capacity.html">&larr; Back to capacity and load</a></div><div class="nextstep reveal"><p class="eyebrow">Next, step 3</p><a class="go" href="burnout.html#top"><b>Burnout and masking</b><span>Signs that load has gone past capacity, burnout when it stays there, masking, and who sees what.</span><i aria-hidden="true">&rarr;</i></a></div>
+</div></div></section><div class="nextstep reveal"><p class="eyebrow">Next, step 3</p><a class="go" href="burnout.html#top"><b>Burnout and masking</b><span>Signs that load has gone past capacity, burnout when it stays there, masking, and who sees what.</span><i aria-hidden="true">&rarr;</i></a></div><div class="nextprev"><a href="capacity.html">&larr; Back to capacity and load</a></div>
 <p class="footer">General information for parents, not legal advice. Free help: Family Advocacy NSW (family-advocacy.com), Australian Centre for Disability Law (disabilitylaw.org.au), Australian Human Rights Commission 1300 656 419. November 2026.</p>
 </div>
 <script>
