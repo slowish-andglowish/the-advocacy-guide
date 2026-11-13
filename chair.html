@@ -143,6 +143,11 @@
   .upnext { text-align: center; }
   table.lt tr:first-child th:last-child { background: var(--lime); color: #25232b; }
   .tpanel { border: 2px solid color-mix(in srgb, var(--ink) 40%, transparent); background: color-mix(in srgb, var(--ink) 7%, var(--surface)); border-radius: 20px; padding: 18px 18px 14px; margin: 22px 0 26px; }
+  .twoway { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 18px; }
+  .twoway > div { background: var(--surface); border: 1px solid var(--rule); border-top: 4px solid var(--ink); border-radius: 14px; padding: 14px 16px; }
+  .twoway b { display: block; color: var(--ink); margin-bottom: 4px; }
+  .twoway p { margin: 0; }
+  @media (max-width: 640px) { .twoway { grid-template-columns: 1fr; } }
   .tpanel > :first-child { margin-top: 0; }
   .tpanel > :last-child { margin-bottom: 0; }
   .tpanel .toggle { background: var(--surface); box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 18%, transparent); }
