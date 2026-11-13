@@ -143,8 +143,9 @@
   .upnext { text-align: center; }
   table.lt tr:first-child th:last-child { background: var(--lime); color: #25232b; }
   .tpanel { border: 2px solid color-mix(in srgb, var(--ink) 40%, transparent); background: color-mix(in srgb, var(--ink) 7%, var(--surface)); border-radius: 20px; padding: 18px 18px 14px; margin: 22px 0 26px; }
-  .twoway { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0 18px; }
-  .twoway > div { background: var(--surface); border: 1px solid var(--rule); border-top: 4px solid var(--ink); border-radius: 14px; padding: 14px 16px; }
+  .twoway { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 26px 0 18px; padding: 26px 14px 14px; background: color-mix(in srgb, var(--lilac) 70%, var(--bg)); border-radius: 20px; }
+  .twoway::before { content: "*"; position: absolute; top: -14px; left: -10px; width: 38px; height: 38px; border-radius: 50%; background: var(--lime); color: #25232b; font: 800 30px/50px 'Bricolage Grotesque', system-ui, sans-serif; text-align: center; }
+  .twoway > div { background: var(--surface); border-radius: 14px; padding: 14px 16px; }
   .twoway b { display: block; color: var(--ink); margin-bottom: 4px; }
   .twoway p { margin: 0; }
   @media (max-width: 640px) { .twoway { grid-template-columns: 1fr; } }
@@ -376,7 +377,7 @@
 <p>A plan has to look at both, and it can get either one wrong.</p>
 <div class="twoway">
   <div><b>A support that works as load</b><p>Occupational therapy, speech therapy and exercise physiology are meant as supports. For a child who is already over capacity, each appointment can be one more demand on the week.</p></div>
-  <div><b>Load that was a support</b><p><span class="hl">Removing something can look like reducing load when it actually removes a support</span>, such as cutting back the sport a child plays with their friends.</p></div>
+  <div><b>Load that was a support</b><p>Removing something can look like reducing load when it actually removes a support, such as cutting back the sport a child plays with their friends.</p></div>
 </div>
 <div class="box"><b>Your child is the authority, not a table.</b> The tables above are only examples. What is load for one child can be a support for another with the same diagnosis, and it changes over time for the same child. The only way to know which it is, is to watch how your child is going.</div>
 
