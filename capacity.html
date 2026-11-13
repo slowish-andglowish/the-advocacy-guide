@@ -341,6 +341,12 @@
 <div class="box">Boredom is not a lack of load. For some children, sitting through work that does not engage them is one of the hardest things a school day asks of them.</div>
 
 <h3>Supports <span class="tag g">sustain capacity</span></h3>
+<div class="toggle ctoggle" role="group" aria-label="Show support examples for">
+  <button type="button" data-c="all" aria-pressed="true">All</button>
+  <button type="button" data-c="asd" aria-pressed="false">Autism</button>
+  <button type="button" data-c="adhd" aria-pressed="false">ADHD</button>
+  <button type="button" data-c="read" aria-pressed="false">Reading disorder</button>
+</div>
 <div class="tw"><table class="lt"><tr><th style="width:24%">Support</th><th>Examples</th></tr><tr><td class="k">Rest and recovery</td><td><ul data-v="all"><li>Sleep</li><li>Low-demand time after school and at weekends</li></ul><ul data-v="asd" hidden><li>Time alone with low demands after school</li></ul><ul data-v="adhd" hidden><li>Physical activity</li><li>A steady sleep routine</li></ul><ul data-v="read" hidden><li>Breaks from reading</li><li>Audiobooks for enjoyment</li></ul></td></tr><tr><td class="k">Predictability</td><td><ul data-v="all"><li>Warning before changes</li><li>The same routine for arrival and breaks</li></ul><ul data-v="asd" hidden><li>Warning before changes</li><li>The same routine for arrival and breaks</li></ul><ul data-v="adhd" hidden><li>Visual schedules</li><li>Reminders for deadlines and equipment</li></ul><ul data-v="read" hidden><li>Instructions given out loud as well as in writing</li></ul></td></tr><tr><td class="k">Belonging</td><td><ul data-v="all"><li>Friends, and the activities shared with them</li><li>A trusted adult at school</li></ul><ul data-v="asd" hidden><li>Friends who share their interests</li><li>A trusted adult at school</li></ul><ul data-v="adhd" hidden><li>Team sport and active friendships</li></ul><ul data-v="read" hidden><li>Being valued for strengths other than reading</li></ul></td></tr><tr><td class="k">Engagement</td><td><ul data-v="all"><li>Subjects designed to use the child's strengths</li><li>Work that uses the child's strengths and interests</li><li>The right level of challenge</li></ul><ul data-v="asd" hidden><li>Learning built around their interests</li><li>Clear structure with room to go deep</li></ul><ul data-v="adhd" hidden><li>Active, varied, well-paced work</li><li>The right level of challenge</li></ul><ul data-v="read" hidden><li>Answering out loud</li><li>Audiobooks and text-to-speech</li><li>Showing what they know in other ways</li></ul></td></tr><tr><td class="k">Regulation</td><td><ul data-v="all"><li>A quiet space, without having to explain</li><li>Permission to move and stim</li></ul><ul data-v="asd" hidden><li>A quiet space, without having to explain</li><li>Permission to stim</li></ul><ul data-v="adhd" hidden><li>Movement breaks</li><li>Something to fidget with</li></ul><ul data-v="read" hidden><li>Time to read and answer without being rushed</li></ul></td></tr><tr><td class="k">Treatment</td><td><ul data-v="all"><li>Therapy and medication, where they help</li></ul><ul data-v="asd" hidden><li>Occupational and speech therapy, where they help</li></ul><ul data-v="adhd" hidden><li>Medication, where it helps</li></ul><ul data-v="read" hidden><li>Structured literacy teaching (explicit phonics and spelling)</li></ul></td></tr></table></div>
 <p>"Load" and "support" are our terms. Under the law, any adjustment that is reasonable and needed is required, whether it removes a barrier or adds a support.</p>
 <p>A plan has to look at both. <span class="hl">Removing something can look like reducing load when it actually removes a support</span>, such as taking a child out of the sport they play with their friends.</p>
@@ -448,7 +454,7 @@
   var bs=document.querySelectorAll('.ctoggle button');
   bs.forEach(function(b){ b.addEventListener('click', function(){
     var v=b.getAttribute('data-c');
-    bs.forEach(function(x){ x.setAttribute('aria-pressed', x===b ? 'true' : 'false'); });
+    bs.forEach(function(x){ x.setAttribute('aria-pressed', x.getAttribute('data-c')===v ? 'true' : 'false'); });
     document.querySelectorAll('ul[data-v]').forEach(function(u){ u.hidden = u.getAttribute('data-v') !== v; });
   }); });
 })();
