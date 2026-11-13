@@ -129,7 +129,9 @@
   .cascade li + li::before { content: "\2192"; position: absolute; left: -12px; top: 50%; transform: translateY(-50%); color: var(--ink); font-weight: 800; background: var(--bg); line-height: 1; }
   .cascade li.hit { background: var(--ink); color: var(--bg); border-color: var(--ink); }
   .cascade li.hit small { display: block; font-weight: 700; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; margin-top: 8px; }
-  .cascade li.end { background: var(--warm); border-top-color: var(--warm-ink); color: var(--warm-ink); }
+  .cascade li.end { --bad-line: #b3170f; --bad-wash: #f7dcd8; --bad-ink: #8e1a10; background: var(--bad-wash); border-color: var(--bad-line); border-top-color: var(--bad-line); color: var(--bad-ink); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cascade li.end { --bad-line: #e0675c; --bad-wash: #3a1e1c; --bad-ink: #f4b3aa; } }
+  :root[data-theme="dark"] .cascade li.end { --bad-line: #e0675c; --bad-wash: #3a1e1c; --bad-ink: #f4b3aa; }
   .fig { margin: 24px 0 28px; }
   .fig svg text { font-family: "Lora", Georgia, serif; }
   figcaption { font-size: .92rem; color: var(--muted); text-align: center; max-width: 46ch; margin: 10px auto 0; }
