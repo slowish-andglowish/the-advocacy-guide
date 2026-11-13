@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Subject design and delivery</title>
+<meta name="description" content="One subject taught two ways, and what each design requires of the child.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap">
+<style>
+  :root { --bg:#f6f5f2; --fg:#25232b; --muted:#5c5965; --ink:#3d2a8c; --line:#3d2a8c; --lilac:#dcd6f4; --lime:#e4f6a0; --tint:#ebe7f7; --rule:#dedbe6; --cell:#efedf5;
+    --surface:#ffffff; --accent:var(--ink); --accent-ink:var(--ink); --accent-soft:var(--tint); --ring:#a7a2b3; --warm:#f6efe3; --warm-ink:#6b5533; --ok:#2e7d4f; --no:#b03a2e; --shadow:none; }
+  body.und { --bg:#f6f2ea; --tint:#ece4d6; --cell:#efe8dc; }
+  body.cap { --bg:#f6eee7; --tint:#efdfd2; --cell:#f1e5db; }
+  body.brn { --bg:#f6ece9; --tint:#eedcd6; --cell:#f0e2dd; }
+  body.beh { --bg:#f5ebeb; --tint:#ecdadb; --cell:#efe0e1; }
+  body.law { --bg:#f2e9f1; --tint:#e7d8e6; --cell:#ebdeea; }
+  body.sup { --bg:#ece7f5; --tint:#ddd4ef; --cell:#e2daf1; }
+  body.act { --bg:#e6e0f4; --tint:#d6cbef; --cell:#dcd2f1; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#18171c; --fg:#ece9f2; --muted:#b5b0c0; --ink:#c8bbff; --line:#8f80d6; --lilac:#3a3354; --lime:#d9e88a; --tint:#24222c; --rule:#34313d; --cell:#211f28; --surface:#211f28; --ring:#5c566b; --warm:#2a241a; --warm-ink:#dcc9a0; --ok:#7fd19e; --no:#f19a8f; color-scheme: dark; } :root:not([data-theme="light"]) body:not(.home) { --bg:#1a191f; --tint:#26232e; } }
+  :root[data-theme="dark"] { --bg:#18171c; --fg:#ece9f2; --muted:#b5b0c0; --ink:#c8bbff; --line:#8f80d6; --lilac:#3a3354; --lime:#d9e88a; --tint:#24222c; --rule:#34313d; --cell:#211f28; --surface:#211f28; --ring:#5c566b; --warm:#2a241a; --warm-ink:#dcc9a0; --ok:#7fd19e; --no:#f19a8f; color-scheme: dark; }
+  :root[data-theme="dark"] body:not(.home) { --bg:#1a191f; --tint:#26232e; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body.und { --bg:#1b1a19; --tint:#28251f; } :root:not([data-theme="light"]) body.cap { --bg:#1c1a19; --tint:#2b2420; } :root:not([data-theme="light"]) body.brn { --bg:#1d1a1a; --tint:#2c2323; } :root:not([data-theme="light"]) body.beh { --bg:#1d191b; --tint:#2c2226; } :root:not([data-theme="light"]) body.law { --bg:#1c191e; --tint:#2a2230; } :root:not([data-theme="light"]) body.sup { --bg:#1a1921; --tint:#272336; } :root:not([data-theme="light"]) body.act { --bg:#1a1824; --tint:#29233d; } }
+  :root[data-theme="dark"] body.und { --bg:#1b1a19; --tint:#28251f; } :root[data-theme="dark"] body.cap { --bg:#1c1a19; --tint:#2b2420; } :root[data-theme="dark"] body.brn { --bg:#1d1a1a; --tint:#2c2323; } :root[data-theme="dark"] body.beh { --bg:#1d191b; --tint:#2c2226; } :root[data-theme="dark"] body.law { --bg:#1c191e; --tint:#2a2230; } :root[data-theme="dark"] body.sup { --bg:#1a1921; --tint:#272336; } :root[data-theme="dark"] body.act { --bg:#1a1824; --tint:#29233d; }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: "Lora", Georgia, serif; font-size: 20px; line-height: 1.72; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); padding-block: 0 80px; overflow-x: hidden; }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  .col { max-width: 660px; margin: 0 auto; min-width: 0; }
+  header.top { display: flex; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 26px 0; flex-wrap: wrap; }
+  .brand { font-family: "Bricolage Grotesque", Arial, sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--ink); text-decoration: none; }
+  nav.links { display: flex; gap: 6px 22px; flex-wrap: wrap; font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: .92rem; }
+  nav.links a { color: var(--ink); text-decoration: none; padding: 4px 0; }
+  nav.links a[aria-current] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+  nav.links span { color: var(--muted); opacity: .6; padding: 4px 0; }
+
+  h1, h2, h3, .num, .cards b, .eyebrow, .sublinks a, .nextprev a, th { font-family: "Bricolage Grotesque", Arial, sans-serif; }
+  h1, h2, h3 { color: var(--ink); text-wrap: balance; }
+  .hero { padding: 64px 0 24px; text-align: center; }
+  .hero p { margin-left: auto; margin-right: auto; }
+  h1 { font-size: clamp(2.3rem, 6vw, 3.6rem); line-height: 1.05; letter-spacing: -.025em; margin: 0 0 24px; font-weight: 700; }
+  .eyebrow { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--ink); margin: 0 0 16px; }
+  .lead { font-size: 1.2rem; line-height: 1.6; margin: 0 0 20px; }
+  .sub { color: var(--muted); font-size: 1rem; margin: 0; }
+
+  section.sec { padding: 64px 0 8px; }
+  .head { text-align: center; }
+  .num { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--lime); font-weight: 700; font-size: 1rem; margin: 0 auto 16px; color: #25232b; }
+  h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); line-height: 1.14; letter-spacing: -.02em; margin: 0 0 22px; font-weight: 700; }
+  h3 { font-size: 1.2rem; margin: 34px 0 10px; font-weight: 700; }
+  p { margin: 0 0 20px; }
+  .gist { font-size: 1.08em; line-height: 1.6; }
+  ul, ol { padding-left: 1.1em; margin: 0 0 20px; } li { margin-bottom: 12px; }
+  a { color: var(--ink); text-underline-offset: 3px; }
+  .note, .box, .callout { background: var(--tint); border-radius: 22px 22px 22px 0; padding: 22px 28px; margin: 28px 0; border: 0; }
+  .note p:last-child, .box p:last-child, .callout p:last-child { margin: 0; }
+  .small { font-size: .9rem; color: var(--muted); }
+  .quote { border-left: 2px solid var(--line); padding: 4px 0 4px 18px; margin: 18px 0; color: var(--muted); }
+  .quote div { margin: 2px 0; } .quote .i { padding-left: 18px; }
+
+  .tw { margin: 16px 0 26px; overflow-x: auto; }
+  table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: .95rem; border: 1.5px solid var(--rule); border-radius: 18px; overflow: hidden; }
+  th, td { border-bottom: 1px solid var(--rule); padding: 12px 16px; vertical-align: top; text-align: left; }
+  tr:last-child td { border-bottom: 0; }
+  th { background: var(--tint); color: var(--ink); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+  td.k { font-weight: 600; background: var(--cell); width: 30%; }
+
+  .cycle { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 22px 0 8px; }
+  .cycle div { background: var(--tint); color: var(--ink); padding: 16px 10px; font-family: "Bricolage Grotesque", Arial, sans-serif; font-weight: 700; text-align: center; border-radius: 18px; min-width: 0; }
+  .cycle small { display: block; font-family: "Lora", Georgia, serif; font-weight: 400; font-size: .8rem; color: var(--muted); margin-top: 4px; }
+  .cycle-note { font-size: .9rem; color: var(--muted); margin: 0 0 20px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .two > * { min-width: 0; }
+
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 30px auto 0; max-width: 900px; }
+  .cards a { display: block; border: 1.5px solid var(--line); border-radius: 26px; padding: 26px 28px 28px; text-decoration: none; color: var(--fg); transition: background .2s; min-width: 0; }
+  .cards a:hover, .cards a:focus { background: var(--tint); }
+  .cards a.soon { border-style: dashed; opacity: .55; pointer-events: none; }
+  .cards b { display: block; font-size: 1.15rem; margin-bottom: 8px; color: var(--ink); }
+  .cards span { font-size: 1rem; color: var(--muted); display: block; }
+  .cards u { display: inline-block; margin-top: 14px; font-family: "Bricolage Grotesque", Arial, sans-serif; color: var(--ink); text-underline-offset: 5px; font-size: .95rem; }
+  .nextstep { text-align: center; margin: 88px auto 0; max-width: 660px; }
+  .go { display: flex; flex-direction: column; align-items: center; gap: 6px; border: 1.5px solid var(--line); border-radius: 28px; padding: 30px 28px; text-decoration: none; color: var(--fg); transition: background .2s; }
+  a.go:hover, a.go:focus { background: var(--tint); }
+  .go b { font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: clamp(1.3rem, 3vw, 1.7rem); color: var(--ink); line-height: 1.2; }
+  .go span { color: var(--muted); font-size: 1rem; }
+  .go i { font-style: normal; font-size: 1.6rem; color: var(--ink); margin-top: 6px; }
+  .go.soon { border-style: dashed; opacity: .6; }
+  .course { list-style: none; padding: 0; margin: 24px auto 0; max-width: 660px; }
+  .course li { margin: 0 0 12px; }
+  .course a, .course .soon { display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: center; padding: 16px 20px; border: 1.5px solid var(--line); border-radius: 22px; text-decoration: none; color: var(--fg); }
+  .course a:hover, .course a:focus { background: var(--tint); }
+  .course .soon { border-style: dashed; opacity: .55; }
+  .course .n { width: 40px; height: 40px; border-radius: 50%; background: var(--lime); color: #25232b; display: flex; align-items: center; justify-content: center; font-family: "Bricolage Grotesque", Arial, sans-serif; font-weight: 700; }
+  .course b { display: block; font-family: "Bricolage Grotesque", Arial, sans-serif; color: var(--ink); font-size: 1.1rem; line-height: 1.25; }
+  .course small { display: block; color: var(--muted); font-size: .92rem; margin-top: 2px; }
+  .course li.sub { margin-left: 56px; }
+  .course li.sub .n { width: 32px; height: 32px; font-size: .85rem; background: var(--tint); }
+  @media (max-width: 700px) { .course li.sub { margin-left: 24px; } }
+  .sublinks { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 18px; }
+  .sublinks a { border: 1.5px solid var(--line); border-radius: 999px; padding: 10px 20px; text-decoration: none; font-weight: 600; font-size: .95rem; }
+  .nextprev { display: flex; justify-content: space-between; gap: 12px; margin: 72px auto 0; flex-wrap: wrap; max-width: 660px; }
+  .nextprev a { font-weight: 600; text-decoration: none; border: 1.5px solid var(--line); border-radius: 999px; padding: 12px 24px; }
+  .footer { font-size: .9rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 18px; margin: 72px auto 0; max-width: 660px; }
+
+  h3 { font-size: 1.3rem; }
+  h3.sub { color: var(--ink); font-size: clamp(1.3rem, 2.6vw, 1.55rem); line-height: 1.2; margin: 56px 0 16px; letter-spacing: -.01em; }
+  .hero.inner { padding: 48px 0 8px; }
+  .hero.inner h1 { font-size: clamp(1.9rem, 4.4vw, 2.6rem); margin-bottom: 18px; }
+  .hero.inner .lead { font-size: 1.1rem; }
+  .hero.inner .eyebrow { display: inline-block; background: var(--lime); color: #25232b; border-radius: 999px; padding: 6px 14px; letter-spacing: .1em; }
+  .chain { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0 28px; }
+  .chain div { background: var(--tint); border-radius: 22px 22px 22px 0; padding: 22px 24px; font-size: 1rem; min-width: 0; }
+  .chain b { display: block; margin-bottom: 8px; color: var(--ink); font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: 1.08rem; line-height: 1.25; }
+  .check { list-style: none; padding-left: 0; margin: 0 0 14px; }
+  .check li { position: relative; padding: 10px 12px 10px 44px; margin: 0 0 8px; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; }
+  .check li::before { content: ""; position: absolute; left: 14px; top: 15px; width: 18px; height: 18px; border: 2px solid var(--ink); border-radius: 5px; }
+  .journey { list-style: none; padding: 0; margin: 18px 0 20px; position: relative; }
+  .journey::before { content: ""; position: absolute; left: 19px; top: 20px; bottom: 20px; width: 3px; background: var(--tint); border-radius: 2px; }
+  .journey li { position: relative; display: grid; grid-template-columns: 40px 1fr; gap: 14px; margin: 0 0 14px; align-items: start; }
+  .journey .jn { width: 40px; height: 40px; border-radius: 50%; background: var(--lime); color: #25232b; font-family: "Bricolage Grotesque", Arial, sans-serif; font-weight: 700; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+  .journey li.loop .jn { background: var(--surface); color: var(--ink); border: 3px solid var(--ink); }
+  .journey div { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 14px 18px; min-width: 0; }
+  .journey b { display: block; color: var(--ink); margin-bottom: 4px; font-family: "Bricolage Grotesque", Arial, sans-serif; }
+  .journey p { margin: 0; font-size: .95rem; }
+  .cascade { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0 24px; list-style: none; padding: 0; }
+  .cascade li { position: relative; background: var(--surface); border: 1px solid var(--rule); border-top: 4px solid var(--ink); border-radius: 14px; padding: 14px 12px; font-weight: 600; font-size: .9rem; line-height: 1.35; min-width: 0; margin: 0; }
+  .cascade li + li::before { content: "\2192"; position: absolute; left: -12px; top: 50%; transform: translateY(-50%); color: var(--ink); font-weight: 800; background: var(--bg); line-height: 1; }
+  .cascade li.hit { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .cascade li.hit small { display: block; font-weight: 700; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; margin-top: 8px; }
+  .cascade li.end { background: var(--warm); border-top-color: var(--warm-ink); color: var(--warm-ink); }
+  .fig { margin: 24px 0 28px; }
+  .fig svg text { font-family: "Lora", Georgia, serif; }
+  figcaption { font-size: .92rem; color: var(--muted); text-align: center; max-width: 46ch; margin: 10px auto 0; }
+  .ok { color: var(--ok); } .no { color: var(--no); }
+  .course .subset { margin: 10px 0 4px 20px; padding: 4px 0 0 30px; border-left: 2px dashed var(--line); list-style: none; }
+  .course .subset-label { font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink); margin: 4px 0 10px; }
+  .course .subset li { margin: 0 0 10px; }
+  .course .subset .n { width: 40px; height: 40px; font-size: .85rem; background: var(--tint); color: var(--ink); }
+  .upnext { text-align: center; }
+  @media (max-width: 700px) { .chain { grid-template-columns: 1fr; } .cascade { grid-template-columns: 1fr; gap: 16px; } .cascade li + li::before { content: "\2193"; left: 50%; top: -15px; transform: translateX(-50%); } .course .subset { margin-left: 10px; padding-left: 16px; } }
+  .hl { --hl1: rgba(222,244,140,.95); --hl2: rgba(206,236,105,.9); font-weight: 600; padding: 0 .25em; margin: 0 -.1em; border-radius: .2em .6em .3em .8em; background-image: linear-gradient(101deg, transparent 0%, var(--hl1) 2.5%, var(--hl2) 60%, var(--hl1) 94%, transparent 100%); background-size: 100% 58%; background-position: 0 92%; background-repeat: no-repeat; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hl { --hl1: rgba(160,185,60,.55); --hl2: rgba(150,175,50,.6); } }
+  :root[data-theme="dark"] .hl { --hl1: rgba(160,185,60,.55); --hl2: rgba(150,175,50,.6); }
+  .two ul { list-style: none; padding: 0; margin: 0; }
+  .two li { background: var(--tint); border-radius: 18px 18px 18px 4px; padding: 12px 18px; margin: 0 0 12px; }
+  table:not(.compare) td:nth-child(even):not(.k) { background: color-mix(in srgb, var(--tint) 60%, var(--surface)); }
+  table:not(.compare) th:nth-child(even) { background: color-mix(in srgb, var(--tint) 100%, var(--surface)); }
+  table:not(.compare) td:nth-child(odd):not(.k) { background: var(--surface); }
+  table.compare th:nth-child(2) { background: var(--lime); color: #25232b; }
+  table.compare td:nth-child(2) { background: color-mix(in srgb, var(--lime) 38%, var(--surface)); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) table.compare td:nth-child(2) { background: color-mix(in srgb, var(--lime) 16%, var(--surface)); } }
+  :root[data-theme="dark"] table.compare td:nth-child(2) { background: color-mix(in srgb, var(--lime) 16%, var(--surface)); }
+  table.compare th:nth-child(3) { background: var(--cell); color: var(--muted); }
+  table.compare td:nth-child(3) { background: var(--surface); color: var(--muted); }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+  @media (max-width: 700px) {
+    body { font-size: 18.5px; }
+    .cards, .two { grid-template-columns: 1fr; }
+    .cycle { grid-template-columns: 1fr 1fr; }
+    nav.links { gap: 4px 16px; }
+    table, tr, th, td { display: block; width: 100%; }
+    table { border: 0; border-radius: 0; overflow: visible; }
+    tr:first-child:has(th) { display: none; }
+    tr { border: 1.5px solid var(--rule); border-radius: 16px; margin: 0 0 12px; overflow: hidden; }
+    td { border: 0; border-top: 1px solid var(--rule); }
+    tr > td:first-child { border-top: 0; }
+    td.k { width: auto; }
+    td[data-label]::before { content: attr(data-label); display: block; font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: .74rem; font-weight: 600; color: var(--ink); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 3px; }
+  }
+
+:root { --surface:#ffffff; --accent:var(--ink); --accent-ink:var(--ink); --accent-soft:var(--tint); --band:#eceae4; --bar:var(--ink); --strong:#2e7d4f; --strong-wash:rgba(46,125,79,.16); --pinch:#b03a2e; --pinch-wash:rgba(176,58,46,.16); --unknown:#8a8780; --unknown-wash:rgba(138,135,128,.16); --warm:#f6efe3; --warm-ink:#6b5533; --shadow:0 1px 2px rgba(20,30,30,.06), 0 6px 18px rgba(20,30,30,.05); --reduced:#a8741a; --reduced-wash:rgba(200,140,30,.17); --neutral-wash:rgba(15,92,99,.10); --surface:#ffffff; --shadow:none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --surface:#1a2023; --accent:var(--ink); --accent-ink:var(--ink); --accent-soft:var(--tint); --band:#252c30; --bar:var(--ink); --strong:#7fd19e; --strong-wash:rgba(127,209,158,.16); --pinch:#f19a8f; --pinch-wash:rgba(241,154,143,.17); --unknown:#9aa3aa; --unknown-wash:rgba(154,163,170,.14); --warm:#2a241a; --warm-ink:#dcc9a0; --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.3); --reduced:#e2b25a; --reduced-wash:rgba(226,178,90,.16); --neutral-wash:rgba(143,208,214,.12); --surface:#211f28; --shadow:none; } }
+:root[data-theme="dark"] { --surface:#1a2023; --accent:var(--ink); --accent-ink:var(--ink); --accent-soft:var(--tint); --band:#252c30; --bar:var(--ink); --strong:#7fd19e; --strong-wash:rgba(127,209,158,.16); --pinch:#f19a8f; --pinch-wash:rgba(241,154,143,.17); --unknown:#9aa3aa; --unknown-wash:rgba(154,163,170,.14); --warm:#2a241a; --warm-ink:#dcc9a0; --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.3); --reduced:#e2b25a; --reduced-wash:rgba(226,178,90,.16); --neutral-wash:rgba(143,208,214,.12); --surface:#211f28; --shadow:none; }
+
+  .task { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 16px 18px; box-shadow: var(--shadow); margin: 18px 0; }
+  .task b { color: var(--accent-ink); }
+  .task .result { display: inline-block; margin-top: 8px; font-weight: 800; background: var(--accent-soft); color: var(--accent-ink); padding: 4px 10px; border-radius: 999px; font-size: .92rem; }
+
+  .handfig { margin: 6px 0 22px; background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 14px 16px 10px; box-shadow: var(--shadow); }
+  .handfig .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .handfig svg { width: 100%; max-width: 380px; height: auto; display: block; margin: 0 auto; min-width: 0; }
+  @media (max-width: 640px) { .handfig .pair { grid-template-columns: 1fr; } }
+  .handfig svg text { font-family: inherit; }
+  .handfig figcaption { font-size: .9rem; color: var(--muted); text-align: center; max-width: 52ch; margin: 8px auto 0; }
+  .handimg { }
+  :root[data-theme="dark"] .handimg { filter: invert(1); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .handimg { filter: invert(1); } }
+  /* toggle */
+  .toggle { display: inline-flex; background: var(--band); border-radius: 999px; padding: 4px; gap: 4px; margin: 6px 0 16px; flex-wrap: wrap; }
+  .toggle button { font: inherit; font-weight: 800; font-size: .92rem; border: 0; border-radius: 999px; padding: 8px 16px; background: transparent; color: var(--fg); cursor: pointer; }
+  .toggle button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  :root[data-theme="dark"] .toggle button[aria-pressed="true"] { color: #0f1a1c; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .toggle button[aria-pressed="true"] { color: #0f1a1c; } }
+
+  /* chart */
+  .chart { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 14px 16px 10px; box-shadow: var(--shadow); }
+  .group { font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 14px 0 6px; }
+  .group:first-child { margin-top: 2px; }
+  .row { position: relative; display: grid; grid-template-columns: 200px 1fr 46px; gap: 12px; align-items: center; padding: 9px 8px; border-radius: 8px; }
+  .row .name { font-weight: 700; font-size: .95rem; line-height: 1.25; min-width: 0; }
+  .row .name small { display: block; font-weight: 400; color: var(--muted); font-size: .8rem; }
+  .track { position: relative; height: 22px; background: linear-gradient(to right, transparent 25%, var(--band) 25%, var(--band) 75%, transparent 75%); border-radius: 4px; min-width: 0; }
+  .track::before, .track::after { content: ""; position: absolute; top: -4px; bottom: -4px; width: 1px; background: var(--rule); }
+  .track::before { left: 50%; }
+  .fill { position: absolute; left: 0; top: 4px; bottom: 4px; background: var(--bar); border-radius: 0 4px 4px 0; }
+  .val { font-weight: 800; font-size: .95rem; text-align: right; font-variant-numeric: tabular-nums; }
+  .obs .fill { background: repeating-linear-gradient(135deg, transparent 0 5px, var(--bar) 5px 7px); border: 2px solid var(--bar); top: 3px; bottom: 3px; right: 0; width: auto !important; border-radius: 4px; opacity: .85; }
+  .obs .note { position: absolute; inset: 0; display: flex; align-items: center; padding: 0 10px; font-size: .78rem; font-weight: 800; color: var(--accent-ink); }
+  .obs .note span { background: var(--surface); padding: 1px 6px; border-radius: 4px; }
+  .unk .track { background: none; border: 2px dashed var(--unknown); }
+  .unk .track::before, .unk .track::after { display: none; }
+  .unk .val { color: var(--unknown); font-size: 1.15rem; }
+  .diag .track { background: none; }
+  .diag .track::before { display: none; }
+  .diag .tag { position: absolute; inset: 0; display: flex; align-items: center; font-size: .82rem; font-weight: 700; color: var(--muted); }
+  .scale { display: grid; grid-template-columns: 200px 1fr 46px; gap: 12px; padding: 4px 8px 0; }
+  .scale .ticks { position: relative; height: 18px; font-size: .74rem; color: var(--muted); }
+  .scale .ticks span { position: absolute; transform: translateX(-50%); }
+  .scale .ticks span:first-child { transform: none; }
+  .scale .ticks span:last-child { transform: translateX(-100%); }
+  .scale .cap { grid-column: 2; font-size: .74rem; color: var(--muted); text-align: center; }
+
+  /* overlay */
+  .wash { position: absolute; inset: 0; border-radius: 8px; opacity: 0; transition: opacity .35s ease; pointer-events: none; border-left: 5px solid transparent; }
+  .wash.s { background: var(--strong-wash); border-left-color: var(--strong); }
+  .wash.p { background: var(--pinch-wash); border-left-color: var(--pinch); }
+  .wash.u { background: var(--unknown-wash); border-left-color: var(--unknown); }
+  .wash.heavy.s, .wash.heavy.p, .wash.heavy.u { }
+  .demand { grid-column: 1 / -1; display: none; font-size: .82rem; font-weight: 700; padding-left: 2px; margin-top: -2px; }
+  .demand.s { color: var(--strong); } .demand.p { color: var(--pinch); } .demand.u { color: var(--unknown); }
+  .chart.on .wash { opacity: 1; }
+  .chart.on .demand { display: block; }
+  .chart.on .row.off { opacity: .45; }
+  .row { transition: opacity .35s ease; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: 12px 0 0; font-size: .85rem; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .sw { width: 22px; height: 12px; border-radius: 3px; display: inline-block; }
+  .sw.m { background: var(--bar); } .sw.o { border: 2px solid var(--bar); background: repeating-linear-gradient(135deg, transparent 0 4px, var(--bar) 4px 6px); }
+  .sw.u { border: 2px dashed var(--unknown); } .sw.avg { background: var(--band); }
+  .sw.ws { background: var(--strong-wash); border-left: 4px solid var(--strong); } .sw.wp { background: var(--pinch-wash); border-left: 4px solid var(--pinch); } .sw.wu { background: var(--unknown-wash); border-left: 4px solid var(--unknown); }
+  .legend.task { display: none; } .chart.on ~ .legend.task { display: flex; }
+
+  .readout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 18px 0; }
+  .readout div { background: var(--surface); border: 1px solid var(--rule); border-top: 4px solid; border-radius: 10px; padding: 14px 16px; box-shadow: var(--shadow); min-width: 0; font-size: .95rem; }
+  .readout b { display: block; margin-bottom: 6px; font-size: 1rem; }
+  .readout .s { border-top-color: var(--strong); } .readout .s b { color: var(--strong); }
+  .readout .p { border-top-color: var(--pinch); } .readout .p b { color: var(--pinch); }
+  .readout .u { border-top-color: var(--unknown); } .readout .u b { color: var(--unknown); }
+
+  .chain { list-style: none; padding: 0; margin: 16px 0 18px; display: grid; gap: 20px; max-width: none; }
+  .chain li { position: relative; background: var(--surface); border: 1px solid var(--rule); border-left: 5px solid var(--accent); border-radius: 8px; padding: 10px 14px; font-weight: 700; margin: 0; }
+  .chain li + li::before { content: "\2193"; position: absolute; top: -19px; left: 22px; color: var(--accent); font-weight: 800; line-height: 1; }
+  .chain li.hurt { border-left-color: var(--pinch); color: var(--pinch); background: var(--pinch-wash); }
+  .cite { font-size: .85rem; color: var(--muted); }
+  .twot { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); font-size: .95rem; }
+  .twot th, .twot td { padding: 12px 14px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+  .twot tr:last-child td { border-bottom: 0; }
+  .twot th { background: var(--accent-soft); color: var(--accent-ink); font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; }
+  .twot td + td, .twot th + th { border-left: 1px solid var(--rule); }
+  .notes { font-size: .88rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 14px; margin-top: 40px; }
+  .notes p { max-width: none; }
+
+  @media (max-width: 640px) {
+    .row, .scale { grid-template-columns: 1fr 40px; gap: 4px 10px; }
+    .row .name { grid-column: 1 / -1; }
+    .scale > :first-child { display: none; }
+    .scale .cap { grid-column: 1; }
+    .readout { grid-template-columns: 1fr; }
+  }
+  .wash.r { background: var(--reduced-wash); border-left-color: var(--reduced); }
+  .demand.r { color: var(--reduced); }
+  .sw.wr { background: var(--reduced-wash); border-left: 4px solid var(--reduced); }
+  .readout .r { border-top-color: var(--reduced); } .readout .r b { color: var(--reduced); }
+  .wash.n { background: var(--neutral-wash); border-left-color: var(--accent); }
+  .demand.n { color: var(--accent-ink); }
+  .sw.wn { background: var(--neutral-wash); border-left: 4px solid var(--accent); }
+  .chart.on .demand { display: none; }
+  .kind { display: block; margin-top: 6px; font-size: .78rem; font-weight: 700; letter-spacing: .02em; }
+  .kind.rm { color: var(--reduced); } .kind.add { color: var(--strong); }
+  .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+  .steps div { background: var(--surface); border: 1px solid var(--rule); border-top: 4px solid; border-radius: 10px; padding: 14px 16px; box-shadow: var(--shadow); min-width: 0; font-size: .95rem; }
+  .steps b { display: block; margin-bottom: 6px; font-size: 1rem; }
+  .steps .rm { border-top-color: var(--reduced); } .steps .rm b { color: var(--reduced); }
+  .steps .add { border-top-color: var(--strong); } .steps .add b { color: var(--strong); }
+  @media (max-width: 640px) { .steps { grid-template-columns: 1fr; } }
+
+.toggle button[aria-pressed="true"] { color: var(--bg); }
+.def { background: var(--tint); border-radius: 22px 22px 22px 0; padding: 22px 28px; margin: 24px 0; }
+.notes { font-size: .88rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 14px; margin-top: 48px; }
+.lcards, .sees, .readout, .steps, .circfig, .chart, .handfig { margin-left: auto; margin-right: auto; }
+.chart .row { padding: 6px 8px; }
+.chart .row .name small { display: none; }
+.chart .demand.m { color: var(--muted); font-weight: 400; }
+.charthint { font-size: .9rem; color: var(--muted); margin: 10px 0 0; }
+@media (min-width: 1000px) {
+  .chart, .legend, .charthint { width: 960px; max-width: calc(100vw - 48px); position: relative; left: 50%; transform: translateX(-50%); }
+  .chart .row { grid-template-columns: 215px minmax(0, 1fr) 36px minmax(0, 2fr); padding: 3px 8px; }
+  .chart .group { margin: 8px 0 2px; }
+  .chart .demand { grid-column: auto; margin: 0; font-size: .76rem; line-height: 1.22; display: block !important; }
+  .chart .scale { grid-template-columns: 215px minmax(0, 1fr) 36px minmax(0, 2fr); }
+  .chart .row .name { font-size: .88rem; }
+  .chart .track { height: 16px; }
+  .charthint { display: none !important; }
+}
+@media (max-width: 999px) {
+  .chart .demand { display: none !important; }
+  .chart .row.open .demand { display: block !important; }
+  .chart .row:not(.off) { cursor: pointer; }
+  .chart .row:not(.off) .name::after { content: ""; display: inline-block; width: .42em; height: .42em; border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); transform: rotate(45deg); margin-left: .45em; vertical-align: .18em; transition: transform .2s ease; }
+  .chart .row.open .name::after { transform: rotate(-135deg); vertical-align: -.05em; }
+  .charthint { margin: 0 0 8px; }
+}
+@media (max-width: 640px) {
+  .chart { padding: 10px 10px 8px; }
+  .chart .row, .chart .scale { grid-template-columns: 118px minmax(0, 1fr) 28px; gap: 2px 8px; padding: 4px 6px; }
+  .chart .row .name { grid-column: auto; font-size: .78rem; line-height: 1.15; }
+  .chart .scale > :first-child { display: block; }
+  .chart .track { height: 12px; }
+  .chart .val { font-size: .82rem; }
+  .chart .group { margin: 8px 0 2px; font-size: .7rem; }
+  .toggle button { font-size: .78rem; padding: 7px 10px; }
+}
+</style>
+</head>
+<body class="cap">
+<div class="wrap">
+<header class="top" id="top" tabindex="-1" style="outline:none"><a class="brand" href="index.html">Enjoy school</a><nav class="links" aria-label="Pages"><a href="index.html">Home</a><a href="understanding.html">Understanding</a><a href="capacity.html" aria-current="page">Capacity</a><a href="burnout.html">Burnout</a><a href="behaviour.html">Behaviour</a><a href="law.html">The law</a><a href="support.html">Support</a><a href="what-you-do.html">Advocate's role</a></nav></header>
+<div class="hero inner"><div class="col"><p class="eyebrow">Step 2, worked example a</p><h1>Japanese, taught two ways</h1><p class="lead">The same subject, the same content, the same syllabus outcomes. Only the design changes, and with it, what the subject requires of the child.</p></div></div><section class="sec reveal"><div class="col"><div class="task">
+  <b>The content (from a Year 7 task sheet).</b> Read and write hiragana, one of the two Japanese sound alphabets. Learn the meaning of eight kanji, the picture-based characters: mountain, river, fire, sun, person, tree, book, Japan. Learn question-and-answer phrases: name, age, phone number, where you live, hobbies.<br>
+  <b>The study materials listed.</b> Class notebook, textbook, homemade vocabulary cards. The test is handwritten in pen, in class.<br>
+  <b>The child.</b> Year 7. Autistic. A reading disorder affecting the link between sounds and written symbols. Dyspraxia, which affects motor coordination, including handwriting.
+</div>
+
+</div></section><section class="sec reveal" id="s1"><div class="col"><div class="head"><span class="num">1</span><h2>The child's profile, then each design laid over it</h2></div>
+<p>Each bar is a percentile: 50 is exactly average, and the grey band is the average range (25th to 75th). Switch between the two designs to see what each one requires.</p>
+
+<div class="toggle" role="group" aria-label="Chart view">
+  <button type="button" data-view="child" aria-pressed="true">The child</button>
+  <button type="button" data-view="a" aria-pressed="false">Typical delivery</button>
+  <button type="button" data-view="b" aria-pressed="false">Designed for the profile</button>
+</div>
+
+<div class="chart" id="chart">
+  <div class="group">Measured by standardised testing</div>
+
+  <div class="row" data-a="off" data-b="s">
+    <div class="wash"></div>
+    <div class="name">Fluid reasoning<small>finding the rule in something new; pattern reasoning 99th</small></div>
+    <div class="track"><div class="fill" style="width:95%"></div></div><div class="val">95</div>
+    <div class="demand" data-a="Barely used. Memorising by repetition leaves this strength idle." data-b="Required: kanji taught as a pattern system, working out how characters are built from parts. A strength."></div>
+  </div>
+
+  <div class="row" data-a="off" data-b="s">
+    <div class="wash"></div>
+    <div class="name">Visual-spatial reasoning<small>thinking in images and shapes</small></div>
+    <div class="track"><div class="fill" style="width:85%"></div></div><div class="val">85</div>
+    <div class="demand" data-a="Barely used." data-b="Required: each hiragana symbol learned through a picture that holds its sound; kanji as images. A strength."></div>
+  </div>
+
+  <div class="row" data-a="s" data-b="s">
+    <div class="wash"></div>
+    <div class="name">Verbal comprehension<small>words and their meaning</small></div>
+    <div class="track"><div class="fill" style="width:80%"></div></div><div class="val">80</div>
+    <div class="demand" data-a="Required: understanding the phrases and their meanings. A strength." data-b="Required: phrases learned by speaking and listening, with the written form alongside. A strength."></div>
+  </div>
+
+  <div class="row" data-a="off" data-b="off">
+    <div class="wash"></div>
+    <div class="name">Processing speed</div>
+    <div class="track"><div class="fill" style="width:70%"></div></div><div class="val">70</div>
+    <div class="demand"></div>
+  </div>
+
+  <div class="row" data-a="off" data-b="s">
+    <div class="wash"></div>
+    <div class="name">Visual working memory<small>holding images in mind (picture span)</small></div>
+    <div class="track"><div class="fill" style="width:95%"></div></div><div class="val">95</div>
+    <div class="demand" data-a="Barely used." data-b="Required: each symbol held as a picture. A strength."></div>
+  </div>
+
+  <div class="row" data-a="n" data-b="off">
+    <div class="wash"></div>
+    <div class="name">Verbal working memory<small>holding sounds and words in mind (digit span)</small></div>
+    <div class="track"><div class="fill" style="width:50%"></div></div><div class="val">50</div>
+    <div class="demand" data-a="Required heavily: vocabulary cards and lists of sounds. An average ability carrying most of the load." data-b="Required less: pictures and patterns carry much of the load."></div>
+  </div>
+
+  <div class="row" data-a="p" data-b="r">
+    <div class="wash"></div>
+    <div class="name">Decoding sounds to written symbols<small>pseudoword decoding; specific learning disorder in reading</small></div>
+    <div class="track"><div class="fill" style="width:12%"></div></div><div class="val">12</div>
+    <div class="demand" data-a="Required heavily: 46 new symbol-sound pairs memorised by repetition. The same process the reading disorder makes hard in English. Given this child's profile, a barrier." data-b="Still required, but carried by the pictures, and tested by recognising, not recalling from nothing. Reduced."></div>
+  </div>
+
+  <div class="group">Known by diagnosis</div>
+
+    <div class="row diag" data-a="p" data-b="r">
+    <div class="wash"></div>
+    <div class="name">Handwriting and fine motor control</div>
+    <div class="track"><div class="tag">Dyspraxia</div></div><div class="val"></div>
+    <div class="demand" data-a="Required heavily: copying new characters by hand, every lesson and in the test, in pen. Given this child's profile, a barrier." data-b="Typing by default on a Japanese keyboard. Handwriting practised separately, not marked on neatness. Reduced."></div>
+  </div>
+
+  <div class="row diag" data-a="p" data-b="r">
+    <div class="wash"></div>
+    <div class="name">Performing with peers</div>
+    <div class="track"><div class="tag">Autism</div></div><div class="val"></div>
+    <div class="demand" data-a="Required: ask-and-tell conversations performed with classmates. Given this child's profile, a barrier." data-b="Phrases practised with the teacher, or recorded, before any pair work. Reduced."></div>
+  </div>
+
+  <div class="scale" aria-hidden="true">
+    <div></div>
+    <div class="ticks"><span style="left:0">0</span><span style="left:25%">25</span><span style="left:50%">50</span><span style="left:75%">75</span><span style="left:100%">100</span></div>
+    <div></div>
+    <div class="cap">percentile</div>
+  </div>
+</div>
+
+<div class="legend">
+  <span><i class="sw m"></i>Measured score</span>
+  <span><i class="sw avg"></i>Average range</span>
+</div>
+<div class="legend task">
+  <span><i class="sw ws"></i>Requires a strength</span>
+  <span><i class="sw wp"></i>Requires a skill that, for this child, acts as a barrier</span>
+  <span><i class="sw wr"></i>Still required, with the barrier reduced</span>
+  <span><i class="sw wn"></i>Requires an average ability</span>
+</div>
+
+</div></section><section class="sec reveal" id="s2"><div class="col"><div class="head"><span class="num">2</span><h2>The two designs, side by side</h2></div>
+<table class="twot">
+  <tr><th>Typical delivery</th><th>Designed for this child's profile</th></tr>
+  <tr><td>Memorise 46 hiragana and their sounds by repetition</td><td>Each hiragana taught with a picture that holds its sound<span class="kind add">Builds on a strength: try, then review</span></td></tr>
+  <tr><td>Kanji learned as vocabulary</td><td>Kanji taught first, as a visual pattern system<span class="kind add">Builds on a strength: try, then review</span></td></tr>
+  <tr><td>Copy characters by hand, in pen</td><td>Type on a Japanese keyboard; handwriting practised separately<span class="kind rm">Removes a barrier: required</span></td></tr>
+  <tr><td>Memorise question-and-answer scripts; perform with classmates</td><td>Learn by speaking and listening; practise with the teacher first<span class="kind rm">Removes a barrier: required</span></td></tr>
+  <tr><td>Show learning in a handwritten test</td><td>Show learning by recognising, speaking, and a typed script<span class="kind rm">Removes a barrier: required</span></td></tr>
+  <tr><td><b>Requires, all lesson:</b> the reading disorder, the dyspraxia</td><td><b>Requires, all lesson:</b> pattern reasoning and visual strength</td></tr>
+</table>
+
+</div></section><section class="sec reveal" id="s3"><div class="col"><div class="head"><span class="num">3</span><h2>Removing barriers is not enough</h2></div>
+<p>If a teaching method is a barrier, taking it away leaves a gap. Something has to be added in its place. What is added is where inclusion actually happens.</p>
+<div class="steps">
+  <div class="rm"><b>Step 1. Remove the barrier</b>Typing instead of handwriting. Recognising instead of recalling. Practising before performing. These are required. They stop the subject measuring the disability.</div>
+  <div class="add"><b>Step 2. Add something better</b>Teach through the child's strengths, so the subject is enjoyable and the effort goes into understanding the material, not into struggling with known difficulties. This is a starting point to try, then review against the child's progress and enjoyment.</div>
+</div>
+<p>Step 2 is the hardest step, and the one most left to the school's judgement. It is also where inclusion succeeds or fails.</p>
+
+</div></section><section class="sec reveal" id="s4"><div class="col"><div class="head"><span class="num">4</span><h2>What changes, and what does not</h2></div>
+<div class="readout">
+  <div class="s"><b>Stays the same</b>The subject, the content, the syllabus outcomes, the teacher, the class.</div>
+  <div class="r"><b>Changes</b>How each part is taught, and how the child shows what they have learned.</div>
+  <div class="u"><b>What it costs the school</b>A set of picture cards for hiragana, a keyboard setting on the laptop, and a differently worded test.</div>
+</div>
+<p>This is differentiated teaching, the ordinary practice of designing a lesson so that more students can reach the same goal. It is not a separate programme. For this child, it decides whether the subject requires their strengths or their barriers, all year.</p>
+
+<div class="box">The design of the subject is where discrimination happens, and where it is fixed.</div>
+
+</div></section><section class="sec"><div class="col"><div class="notes">
+  <p><b>About the two designs.</b> The content and study materials come from a Year 7 Japanese task sheet. The left column describes a typical delivery drawn from those study materials, not observed teaching. The right column is an illustration of differentiated design, not the only way to do it.</p>
+  <p><b>About the evidence.</b> Measured scores are from standardised testing (WISC-V and WIAT-III) in October 2021, at age 8. The two working memory scores are subtests: holding pictures in mind (picture span, 95th) and holding spoken sequences in mind (digit span, 50th). Which abilities each design requires, and how heavily, is a judgement from the design, not a measurement. Picture-based teaching of Japanese script: in one small university study (27 students), extra tutorials using picture mnemonics raised the pass rate significantly, though the rise in average marks was not significant (Manalo, Trafford &amp; Mizutani, <i>JALT Journal</i>, 2004, 26(1)). Two kinds of change are shown. Removing a barrier rests on the child's diagnosis and on the legal duty to adjust. Building on a strength is a reasonable starting point, not a prediction: there is little controlled evidence that matching a method to a profile improves learning, so the approach should be reviewed against the child's progress. The study above tested students generally, not students with strong visual memory. Effort spent on the format of a task rather than its content is what learning researchers call extraneous load; reducing it leaves more capacity for learning the material (Sweller, <i>Cognitive Science</i>, 1988, 12(2):257–285). Typing in place of handwriting: whether the NSW syllabus requires handwritten script at Year 7 has not been confirmed here. Where it does, handwriting can be assessed separately, with adjustments.</p>
+  <p>General information for parents, not clinical or legal advice. November 2026.</p>
+</div></div></section><div class="nextprev"><a href="capacity.html">&larr; Back to capacity and load</a></div><div class="nextstep reveal"><p class="eyebrow">Next, step 2, worked example b</p><a class="go" href="music.html#top"><b>Assessment design</b><span>A worked example: whether a mark shows what a child knows, or what the task required.</span><i aria-hidden="true">&rarr;</i></a></div>
+<p class="footer">General information for parents, not legal advice. Free help: Family Advocacy NSW (family-advocacy.com), Australian Centre for Disability Law (disabilitylaw.org.au), Australian Human Rights Commission 1300 656 419. November 2026.</p>
+</div>
+<script>
+(function(){
+  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch(e) {}
+  function toTop(){ try { window.scrollTo(0, 0); var t = document.getElementById('top'); if (t) { t.scrollIntoView({block:'start'}); t.focus({preventScroll:false}); } } catch(e) {} }
+  if (!location.hash || location.hash === '#top') { toTop(); window.addEventListener('load', toTop); setTimeout(toTop, 150); }
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.08});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+  document.querySelectorAll('table').forEach(function(t){
+    var first=t.querySelector('tr'); if(!first) return;
+    var heads=Array.prototype.map.call(first.querySelectorAll('th'), function(th){ return th.textContent.trim(); });
+    if(!heads.length) return;
+    Array.prototype.slice.call(t.querySelectorAll('tr'),1).forEach(function(tr){
+      Array.prototype.forEach.call(tr.children, function(td,i){ if(heads[i] && !td.classList.contains('k')) td.setAttribute('data-label', heads[i]); });
+    });
+  });
+})();
+</script>
+<script>
+  (function(){
+    var chart=document.getElementById('chart');
+    var btns=document.querySelectorAll('.toggle button');
+    var rows=chart.querySelectorAll('.row');
+    function show(view){
+      chart.classList.toggle('on', view!=='child');
+      rows.forEach(function(r){
+        var w=r.querySelector('.wash'), d=r.querySelector('.demand');
+        var k = view==='child' ? '' : (r.getAttribute('data-'+view)||'off');
+        w.className='wash'+(k&&k!=='off'?' '+k:'');
+        r.classList.toggle('off', view!=='child' && k==='off');
+        if(d){ d.className='demand'+(k&&k!=='off'?' '+k:''); d.textContent = view==='child' ? '' : (d.getAttribute('data-'+view)||''); d.style.display = (view!=='child' && d.textContent) ? 'block' : 'none'; }
+      });
+    }
+    btns.forEach(function(b){
+      b.addEventListener('click',function(){
+        btns.forEach(function(x){x.setAttribute('aria-pressed', x===b?'true':'false');});
+        show(b.getAttribute('data-view'));
+      });
+    });
+    show('child');
+  })();
+</script><script>
+(function(){
+  var chart = document.getElementById('chart'); if (!chart) return;
+  var hint = document.createElement('p'); hint.className = 'charthint';
+  chart.parentNode.insertBefore(hint, chart);
+  chart.querySelectorAll('.demand').forEach(function(d){ if (d.textContent.trim()) { d.setAttribute('data-orig', d.textContent); d.setAttribute('data-origc', d.className); } });
+  function fill(){
+    var child = !chart.classList.contains('on');
+    hint.textContent = child ? 'Tap a row to see what it measures.' : 'Tap a highlighted row to see what this requires of it.';
+    chart.querySelectorAll('.row').forEach(function(r){
+      var d = r.querySelector('.demand'), s = r.querySelector('.name small');
+      if (!d) return;
+      if (child) { if (s) { d.textContent = s.textContent; d.className = 'demand m'; } }
+      else if (d.hasAttribute('data-orig')) { d.textContent = d.getAttribute('data-orig'); d.className = d.getAttribute('data-origc'); }
+    });
+  }
+  chart.addEventListener('click', function(e){
+    var r = e.target.closest('.row'); if (!r || r.classList.contains('off')) return;
+    var was = r.classList.contains('open');
+    chart.querySelectorAll('.row.open').forEach(function(x){ x.classList.remove('open'); });
+    if (!was) r.classList.add('open');
+  });
+  document.querySelectorAll('.toggle button').forEach(function(b){ b.addEventListener('click', function(){ chart.querySelectorAll('.row.open').forEach(function(x){ x.classList.remove('open'); }); fill(); }); });
+  fill();
+})();
+</script>
+</body>
+</html>
