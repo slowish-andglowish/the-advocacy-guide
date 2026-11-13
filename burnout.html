@@ -152,7 +152,9 @@
   .keyline { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: 1.3em; line-height: 1.25; color: var(--ink); padding-left: 56px; margin: 28px 0; min-height: 44px; display: flex; align-items: center; text-wrap: balance; }
   .keyline.ast::before { top: 50%; left: 0; width: 44px; height: 44px; transform: translateY(-50%) rotate(8deg); }
   .sees:has(.signs) { grid-template-columns: 1fr; }
-  .signs p { margin: 10px 0 0; } .signs p i { font-style: normal; font-weight: 700; color: var(--ink); }
+  .sees:has(.signs) > div > b { font-size: 1.15em; }
+  .signs p { margin: 12px 0 0 4px; padding: 2px 0 2px 14px; border-left: 3px solid var(--lilac); }
+  .signs p i { font-style: normal; font-weight: 700; color: var(--fg); }
   ol.ast::before { left: auto; right: -12px; top: -26px; transform: rotate(-8deg); }
   .twoway > div { background: var(--surface); border-radius: 14px; padding: 14px 16px; }
   .twoway b { display: block; color: var(--ink); margin-bottom: 4px; }
