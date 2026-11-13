@@ -146,6 +146,8 @@
   .twoway { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 26px 0 18px; padding: 26px 14px 14px; background: color-mix(in srgb, var(--lilac) 70%, var(--bg)); border-radius: 20px; }
   .twoway::before, .ast::before { content: ""; position: absolute; top: -26px; left: -18px; width: 56px; height: 56px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect width='100' height='100' fill='%23fff'/%3E%3Cg stroke='%23000' stroke-linecap='round' fill='none'%3E%3Cpath d='M48.5 70 L48 93' stroke-width='1.3'/%3E%3Cpath d='M53.5 6 L53 26' stroke-width='1'/%3E%3Cpath d='M51 80 L51.2 94' stroke-width='.9'/%3E%3Cg transform='rotate(60 50 50)'%3E%3Cpath d='M48 72 L47.6 95' stroke-width='1.2'/%3E%3Cpath d='M53 5 L52.6 22' stroke-width='1'/%3E%3C/g%3E%3Cg transform='rotate(120 50 50)'%3E%3Cpath d='M48.6 74 L48.3 94' stroke-width='1.2'/%3E%3Cpath d='M52.4 6 L52 20' stroke-width='.9'/%3E%3Cpath d='M50 3 L50 12' stroke-width='.8'/%3E%3C/g%3E%3C/g%3E%3C/mask%3E%3Cg id='a' transform='translate(50 0) scale(1.5 1) translate(-50 0)'%3E%3Cpath d='M46.5 6.5 C49 4.8 55 5.6 56.4 9 C56.8 24 57.2 38 57.6 52 C58 68 58.6 82 56.2 93.5 C53.6 96 47.4 95.2 45.6 91.4 C43.8 76 43 62 43.4 47 C43.8 32 44.6 19 46.5 6.5 Z'/%3E%3C/g%3E%3C/defs%3E%3Cg fill='%23c4ee2c' mask='url(%23m)'%3E%3Cuse href='%23a'/%3E%3Cuse href='%23a' transform='rotate(60 50 50)'/%3E%3Cuse href='%23a' transform='rotate(-60 50 50)'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat; transform: rotate(8deg); }
   .ast { position: relative; }
+  .sees:has(.signs) { grid-template-columns: 1fr; }
+  .signs p { margin: 10px 0 0; } .signs p i { font-style: normal; font-weight: 700; color: var(--ink); }
   ol.ast::before { left: auto; right: -12px; top: -26px; transform: rotate(-8deg); }
   .twoway > div { background: var(--surface); border-radius: 14px; padding: 14px 16px; }
   .twoway b { display: block; color: var(--ink); margin-bottom: 4px; }
@@ -328,7 +330,10 @@
 <p>It helps to keep two lists apart.</p>
 <div class="sees">
   <div><b>Sources of load</b>What adds to the load: reading, noise, masking, teasing, a hard subject, a change of routine, conflict at home.</div>
-  <div><b>Signs of overload</b>What shows when load has gone past capacity. It looks different in each child. Some go inward: anxiety, exhaustion, long sleeps, shutting down, hiding somewhere small, retreating to screens. Others go outward: meltdowns, anger, aggression, tears, or loud, over-the-top behaviour that is hard to settle. Some run away. Many have trouble sleeping. Reluctance to go to school, which can grow into refusal, is one of the most common signs.</div>
+  <div class="signs"><b>Signs of overload</b>What shows when load has gone past capacity. It looks different in each child, and over different lengths of time.
+    <p><i>In the moment:</i> running away, meltdowns, sudden anger or aggression, tears, loud over-the-top behaviour, shutting down.</p>
+    <p><i>Over the day:</i> holding it together at school, then falling apart at home, exhaustion, trouble getting to sleep, dread the next morning.</p>
+    <p><i>Over weeks and months:</i> burnout. Ongoing exhaustion, anxiety, skills lost for a while, withdrawal, retreating to screens, and school reluctance that grows into refusal.</p></div>
 </div>
 <p>A sign is not the problem to fix. Pushing a child past the gate, or taking away the screen, treats the sign. Reducing the sources treats the problem.</p>
 <p>Screens are a common example. For a child who is over capacity, a screen can be the one place with no demands. That makes it hard to give up, and easy to mistake for defiance. Limits on screens still matter, especially at night, but they work better alongside less load during the day.</p>
