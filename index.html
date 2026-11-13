@@ -168,6 +168,9 @@
   table:not(.compare) td:nth-child(even):not(.k) { background: color-mix(in srgb, var(--tint) 60%, var(--surface)); }
   table:not(.compare) th:nth-child(even) { background: color-mix(in srgb, var(--tint) 100%, var(--surface)); }
   table:not(.compare) td:nth-child(odd):not(.k) { background: var(--surface); }
+  table.compare { table-layout: fixed; }
+  table.compare th:first-child { width: 26%; }
+  table.compare th:nth-child(2), table.compare th:nth-child(3) { width: 37%; }
   table.compare th:nth-child(2) { background: var(--lime); color: #25232b; }
   table.compare td:nth-child(2) { background: color-mix(in srgb, var(--lime) 38%, var(--surface)); }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) table.compare td:nth-child(2) { background: color-mix(in srgb, var(--lime) 16%, var(--surface)); } }
