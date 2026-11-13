@@ -161,6 +161,8 @@
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hl { --hl1: rgba(160,185,60,.55); --hl2: rgba(150,175,50,.6); } }
   :root[data-theme="dark"] .hl { --hl1: rgba(160,185,60,.55); --hl2: rgba(150,175,50,.6); }
   .two ul { list-style: none; padding: 0; margin: 0; }
+  ul.tiles { list-style: none; padding: 0; }
+  .tiles > li { background: var(--tint); border-radius: 18px 18px 18px 4px; padding: 12px 18px; margin: 0 0 12px; }
   .two li { background: var(--tint); border-radius: 18px 18px 18px 4px; padding: 12px 18px; margin: 0 0 12px; }
   table:not(.compare) td:nth-child(even):not(.k) { background: color-mix(in srgb, var(--tint) 60%, var(--surface)); }
   table:not(.compare) th:nth-child(even) { background: color-mix(in srgb, var(--tint) 100%, var(--surface)); }
@@ -225,7 +227,7 @@
 </div></section><section class="sec reveal" id="s3"><div class="col"><div class="head"><span class="num">3</span><h2>Attendance: think about load</h2></div>
 <p class="gist">Reluctance is an early warning. Ask what the load is before you push for a return.</p>
 
-<ul>
+<ul class="tiles">
   <li>Reluctance is an early warning. Act then, before it becomes refusal.</li>
   <li>Ask: what is the load, and at what point in the day?</li>
   <li>Rest restores capacity. Pressure to return before the load is reduced works against the child.</li>
