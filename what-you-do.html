@@ -193,6 +193,15 @@
     tr > td:first-child { border-top: 0; }
     td.k { width: auto; }
     td[data-label]::before { content: attr(data-label); display: block; font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: .74rem; font-weight: 600; color: var(--ink); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 3px; }
+    table.compare tr { display: grid; grid-template-columns: 1fr 1fr; }
+    table.compare tr > * { width: auto; }
+    table.compare tr > td.k, table.compare tr > td:first-child { grid-column: 1 / -1; padding: 10px 14px; background: var(--cell); }
+    table.compare td:not(:first-child) { padding: 10px 12px; font-size: .92em; line-height: 1.45; }
+    table.compare td:nth-child(3) { border-left: 1px solid var(--rule); }
+    table.compare td[data-label]::before { display: none; }
+    table.compare tr:first-child:has(th) { display: grid; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2; border: 0; border-radius: 12px; margin: 0 0 10px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+    table.compare tr:first-child th:first-child { display: none; }
+    table.compare tr:first-child th { border: 0; padding: 8px 12px; font-size: .74rem; text-align: center; }
   }
 </style>
 </head>
@@ -211,12 +220,13 @@
 <h3>How to make requests the school acts on</h3>
 <div class="tw"><table>
   <tr><th style="width:50%">What to do</th><th>Why it works</th></tr>
-  <tr><td>Name the adjustments in writing. If you have a clinician, ask them to write too.</td><td>A clear written request is hard to set aside. A clinician's letter adds weight, but is not required.</td></tr>
+  <tr><td>Name the adjustments in writing.</td><td>A clear written request is hard to set aside.</td></tr>
   <tr><td>Be specific: the need, the evidence, the exact change, and a date to reply by.</td><td>The school can act on it straight away. A vague request is easy to put off.</td></tr>
   <tr><td>Use your child's own words, and the school's own policies and plan.</td><td>Your child's experience is evidence. The school is held to what it has already committed to.</td></tr>
   <tr><td>Ask questions in writing.</td><td>The school has to answer, and the answer is on record.</td></tr>
   <tr><td>After every meeting or call, send a summary and ask the school to correct anything wrong.</td><td>It creates a record both sides have seen.</td></tr>
   <tr><td>Take a support person to meetings.</td><td>They can take notes and notice what you miss.</td></tr>
+  <tr><td>If the school still does not act, and you have the means, ask a clinician to write to the school naming the adjustments.</td><td>It is one way to escalate. It is harder for a school to set aside, but it is not required.</td></tr>
 </table></div>
 
 
