@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Responding to behaviour</title>
+<meta name="description" content="A worked example of responding to a thrown chair: punishment, or removing the cause.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap">
+<style>
+  :root { --bg:#f6f5f2; --fg:#25232b; --muted:#5c5965; --ink:#3d2a8c; --line:#3d2a8c; --lilac:#dcd6f4; --lime:#e4f6a0; --tint:#ebe7f7; --rule:#dedbe6; --cell:#efedf5;
+    --surface:#ffffff; --accent:var(--ink); --accent-ink:var(--ink); --accent-soft:var(--tint); --ring:#a7a2b3; --warm:#f6efe3; --warm-ink:#6b5533; --ok:#2e7d4f; --no:#b03a2e; --shadow:none; }
+  body.und { --bg:#f6f2ea; --tint:#ece4d6; --cell:#efe8dc; }
+  body.cap { --bg:#f6eee7; --tint:#efdfd2; --cell:#f1e5db; }
+  body.brn { --bg:#f6ece9; --tint:#eedcd6; --cell:#f0e2dd; }
+  body.beh { --bg:#f5ebeb; --tint:#ecdadb; --cell:#efe0e1; }
+  body.law { --bg:#f2e9f1; --tint:#e7d8e6; --cell:#ebdeea; }
+  body.sup { --bg:#ece7f5; --tint:#ddd4ef; --cell:#e2daf1; }
+  body.act { --bg:#e6e0f4; --tint:#d6cbef; --cell:#dcd2f1; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#18171c; --fg:#ece9f2; --muted:#b5b0c0; --ink:#c8bbff; --line:#8f80d6; --lilac:#3a3354; --lime:#d9e88a; --tint:#24222c; --rule:#34313d; --cell:#211f28; --surface:#211f28; --ring:#5c566b; --warm:#2a241a; --warm-ink:#dcc9a0; --ok:#7fd19e; --no:#f19a8f; color-scheme: dark; } :root:not([data-theme="light"]) body:not(.home) { --bg:#1a191f; --tint:#26232e; } }
+  :root[data-theme="dark"] { --bg:#18171c; --fg:#ece9f2; --muted:#b5b0c0; --ink:#c8bbff; --line:#8f80d6; --lilac:#3a3354; --lime:#d9e88a; --tint:#24222c; --rule:#34313d; --cell:#211f28; --surface:#211f28; --ring:#5c566b; --warm:#2a241a; --warm-ink:#dcc9a0; --ok:#7fd19e; --no:#f19a8f; color-scheme: dark; }
+  :root[data-theme="dark"] body:not(.home) { --bg:#1a191f; --tint:#26232e; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body.und { --bg:#1b1a19; --tint:#28251f; } :root:not([data-theme="light"]) body.cap { --bg:#1c1a19; --tint:#2b2420; } :root:not([data-theme="light"]) body.brn { --bg:#1d1a1a; --tint:#2c2323; } :root:not([data-theme="light"]) body.beh { --bg:#1d191b; --tint:#2c2226; } :root:not([data-theme="light"]) body.law { --bg:#1c191e; --tint:#2a2230; } :root:not([data-theme="light"]) body.sup { --bg:#1a1921; --tint:#272336; } :root:not([data-theme="light"]) body.act { --bg:#1a1824; --tint:#29233d; } }
+  :root[data-theme="dark"] body.und { --bg:#1b1a19; --tint:#28251f; } :root[data-theme="dark"] body.cap { --bg:#1c1a19; --tint:#2b2420; } :root[data-theme="dark"] body.brn { --bg:#1d1a1a; --tint:#2c2323; } :root[data-theme="dark"] body.beh { --bg:#1d191b; --tint:#2c2226; } :root[data-theme="dark"] body.law { --bg:#1c191e; --tint:#2a2230; } :root[data-theme="dark"] body.sup { --bg:#1a1921; --tint:#272336; } :root[data-theme="dark"] body.act { --bg:#1a1824; --tint:#29233d; }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: "Lora", Georgia, serif; font-size: 20px; line-height: 1.72; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); padding-block: 0 80px; overflow-x: hidden; }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  .col { max-width: 660px; margin: 0 auto; min-width: 0; }
+  header.top { display: flex; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 26px 0; flex-wrap: wrap; }
+  .brand { font-family: "Bricolage Grotesque", Arial, sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--ink); text-decoration: none; }
+  nav.links { display: flex; gap: 6px 22px; flex-wrap: wrap; font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: .92rem; }
+  nav.links a { color: var(--ink); text-decoration: none; padding: 4px 0; }
+  nav.links a[aria-current] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+  nav.links span { color: var(--muted); opacity: .6; padding: 4px 0; }
+
+  h1, h2, h3, .num, .cards b, .eyebrow, .sublinks a, .nextprev a, th { font-family: "Bricolage Grotesque", Arial, sans-serif; }
+  h1, h2, h3 { color: var(--ink); text-wrap: balance; }
+  .hero { padding: 64px 0 24px; text-align: center; }
+  .hero p { margin-left: auto; margin-right: auto; }
+  h1 { font-size: clamp(2.3rem, 6vw, 3.6rem); line-height: 1.05; letter-spacing: -.025em; margin: 0 0 24px; font-weight: 700; }
+  .eyebrow { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--ink); margin: 0 0 16px; }
+  .lead { font-size: 1.2rem; line-height: 1.6; margin: 0 0 20px; }
+  .sub { color: var(--muted); font-size: 1rem; margin: 0; }
+
+  section.sec { padding: 64px 0 8px; }
+  .head { text-align: center; }
+  .num { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--lime); font-weight: 700; font-size: 1rem; margin: 0 auto 16px; color: #25232b; }
+  h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); line-height: 1.14; letter-spacing: -.02em; margin: 0 0 22px; font-weight: 700; }
+  h3 { font-size: 1.2rem; margin: 34px 0 10px; font-weight: 700; }
+  p { margin: 0 0 20px; }
+  .gist { font-size: 1.08em; line-height: 1.6; }
+  ul, ol { padding-left: 1.1em; margin: 0 0 20px; } li { margin-bottom: 12px; }
+  a { color: var(--ink); text-underline-offset: 3px; }
+  .note, .box, .callout { background: var(--tint); border-radius: 22px 22px 22px 0; padding: 22px 28px; margin: 28px 0; border: 0; }
+  .note p:last-child, .box p:last-child, .callout p:last-child { margin: 0; }
+  .small { font-size: .85em; color: var(--muted); }
+  .quote { border-left: 2px solid var(--line); padding: 4px 0 4px 18px; margin: 18px 0; color: var(--muted); }
+  .quote div { margin: 2px 0; } .quote .i { padding-left: 18px; }
+
+  .tw { margin: 16px 0 26px; overflow-x: auto; }
+  table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: .95rem; border: 1.5px solid var(--rule); border-radius: 18px; overflow: hidden; }
+  th, td { border-bottom: 1px solid var(--rule); padding: 12px 16px; vertical-align: top; text-align: left; }
+  tr:last-child td { border-bottom: 0; }
+  th { background: var(--tint); color: var(--ink); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+  td.k { font-weight: 600; background: var(--cell); width: 30%; }
+
+  .cycle { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 22px 0 8px; }
+  .cycle div { background: var(--tint); color: var(--ink); padding: 16px 10px; font-family: "Bricolage Grotesque", Arial, sans-serif; font-weight: 700; text-align: center; border-radius: 18px; min-width: 0; }
+  .cycle small { display: block; font-family: "Lora", Georgia, serif; font-weight: 400; font-size: .8rem; color: var(--muted); margin-top: 4px; }
+  .cycle-note { font-size: .9rem; color: var(--muted); margin: 0 0 20px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .two > * { min-width: 0; }
+
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 30px auto 0; max-width: 900px; }
+  .cards a { display: block; border: 1.5px solid var(--line); border-radius: 26px; padding: 26px 28px 28px; text-decoration: none; color: var(--fg); transition: background .2s; min-width: 0; }
+  .cards a:hover, .cards a:focus { background: var(--tint); }
+  .cards a.soon { border-style: dashed; opacity: .55; pointer-events: none; }
+  .cards b { display: block; font-size: 1.15rem; margin-bottom: 8px; color: var(--ink); }
+  .cards span { font-size: 1rem; color: var(--muted); display: block; }
+  .cards u { display: inline-block; margin-top: 14px; font-family: "Bricolage Grotesque", Arial, sans-serif; color: var(--ink); text-underline-offset: 5px; font-size: .95rem; }
+  .nextstep { text-align: center; margin: 88px auto 0; max-width: 660px; }
+  .go { display: flex; flex-direction: column; align-items: center; gap: 6px; border: 1.5px solid var(--line); border-radius: 28px; padding: 30px 28px; text-decoration: none; color: var(--fg); transition: background .2s; }
+  a.go:hover, a.go:focus { background: var(--tint); }
+  .go b { font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: clamp(1.3rem, 3vw, 1.7rem); color: var(--ink); line-height: 1.2; }
+  .go span { color: var(--muted); font-size: 1rem; }
+  .go i { font-style: normal; font-size: 1.6rem; color: var(--ink); margin-top: 6px; }
+  .go.soon { border-style: dashed; opacity: .6; }
+  .course { list-style: none; padding: 0; margin: 24px auto 0; max-width: 660px; }
+  .course li { margin: 0 0 12px; }
+  .course a, .course .soon { display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: center; padding: 16px 20px; border: 1.5px solid var(--line); border-radius: 22px; text-decoration: none; color: var(--fg); }
+  .course a:hover, .course a:focus { background: var(--tint); }
+  .course .soon { border-style: dashed; opacity: .55; }
+  .course .n { width: 40px; height: 40px; border-radius: 50%; background: var(--lime); color: #25232b; display: flex; align-items: center; justify-content: center; font-family: "Bricolage Grotesque", Arial, sans-serif; font-weight: 700; }
+  .course b { display: block; font-family: "Bricolage Grotesque", Arial, sans-serif; color: var(--ink); font-size: 1.1rem; line-height: 1.25; }
+  .course small { display: block; color: var(--muted); font-size: .92rem; margin-top: 2px; }
+  .course li.sub { margin-left: 56px; }
+  .course li.sub .n { width: 32px; height: 32px; font-size: .85rem; background: var(--tint); }
+  @media (max-width: 700px) { .course li.sub { margin-left: 24px; } }
+  .sublinks { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 18px; }
+  .sublinks a { border: 1.5px solid var(--line); border-radius: 999px; padding: 10px 20px; text-decoration: none; font-weight: 600; font-size: .95rem; }
+  .nextprev { display: flex; justify-content: center; gap: 12px; margin: 28px auto 0; flex-wrap: wrap; max-width: 660px; }
+  .nextprev a { font-size: .92rem; padding: 10px 20px !important; }
+  .nextprev a { font-weight: 600; text-decoration: none; border: 1.5px solid var(--line); border-radius: 999px; padding: 12px 24px; }
+  .footer { font-size: .9rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 18px; margin: 72px auto 0; max-width: 660px; }
+
+  h3 { font-size: 1.3rem; }
+  h3.sub { color: var(--ink); font-size: clamp(1.3rem, 2.6vw, 1.55rem); line-height: 1.2; margin: 56px 0 16px; letter-spacing: -.01em; }
+  .hero.inner { padding: 48px 0 8px; }
+  .hero.inner h1 { font-size: clamp(1.9rem, 4.4vw, 2.6rem); margin-bottom: 18px; }
+  .hero.inner .lead { font-size: 1.1rem; }
+  .hero.inner .eyebrow { display: inline-block; background: var(--lime); color: #25232b; border-radius: 999px; padding: 6px 14px; letter-spacing: .1em; }
+  .chain { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0 28px; }
+  .chain div { background: var(--tint); border-radius: 22px 22px 22px 0; padding: 22px 24px; font-size: 1rem; min-width: 0; }
+  .chain b { display: block; margin-bottom: 8px; color: var(--ink); font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: 1.08rem; line-height: 1.25; }
+  .check { list-style: none; padding-left: 0; margin: 0 0 14px; }
+  .check li { position: relative; padding: 10px 12px 10px 44px; margin: 0 0 8px; background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; }
+  .check li::before { content: ""; position: absolute; left: 14px; top: 15px; width: 18px; height: 18px; border: 2px solid var(--ink); border-radius: 5px; }
+  .journey { list-style: none; padding: 0; margin: 18px 0 20px; position: relative; }
+  .journey::before { content: ""; position: absolute; left: 19px; top: 20px; bottom: 20px; width: 3px; background: var(--tint); border-radius: 2px; }
+  .journey li { position: relative; display: grid; grid-template-columns: 40px 1fr; gap: 14px; margin: 0 0 14px; align-items: start; }
+  .journey .jn { width: 40px; height: 40px; border-radius: 50%; background: var(--lime); color: #25232b; font-family: "Bricolage Grotesque", Arial, sans-serif; font-weight: 700; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+  .journey li.loop .jn { background: var(--surface); color: var(--ink); border: 3px solid var(--ink); }
+  .journey div { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 14px 18px; min-width: 0; }
+  .journey b { display: block; color: var(--ink); margin-bottom: 4px; font-family: "Bricolage Grotesque", Arial, sans-serif; }
+  .journey p { margin: 0; font-size: .95rem; }
+  .cascade { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0 24px; list-style: none; padding: 0; }
+  .cascade li { position: relative; background: var(--surface); border: 1px solid var(--rule); border-top: 4px solid var(--ink); border-radius: 14px; padding: 14px 12px; font-weight: 600; font-size: .9rem; line-height: 1.35; min-width: 0; margin: 0; }
+  .cascade li + li::before { content: "\2192"; position: absolute; left: -12px; top: 50%; transform: translateY(-50%); color: var(--ink); font-weight: 800; background: var(--bg); line-height: 1; }
+  .cascade li.hit { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .cascade li.hit small { display: block; font-weight: 700; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; margin-top: 8px; }
+  .cascade li.end { --bad-line: #b3170f; --bad-wash: #f7dcd8; --bad-ink: #8e1a10; background: var(--bad-wash); border-color: var(--bad-line); border-top-color: var(--bad-line); color: var(--bad-ink); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cascade li.end { --bad-line: #e0675c; --bad-wash: #3a1e1c; --bad-ink: #f4b3aa; } }
+  :root[data-theme="dark"] .cascade li.end { --bad-line: #e0675c; --bad-wash: #3a1e1c; --bad-ink: #f4b3aa; }
+  .fig { margin: 24px 0 28px; }
+  .fig svg text { font-family: "Lora", Georgia, serif; }
+  figcaption { font-size: .92rem; color: var(--muted); text-align: center; max-width: 46ch; margin: 10px auto 0; }
+  .ok { color: var(--ok); } .no { color: var(--no); }
+  .course .subset { margin: 10px 0 4px 20px; padding: 4px 0 0 30px; border-left: 2px dashed var(--line); list-style: none; }
+  .course .subset-label { font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; color: var(--ink); margin: 4px 0 10px; }
+  .course .subset li { margin: 0 0 10px; }
+  .course .subset .n { width: 40px; height: 40px; font-size: .85rem; background: var(--tint); color: var(--ink); }
+  .upnext { text-align: center; }
+  @media (max-width: 700px) { .circfig { padding: 10px 8px 16px; } .circfig svg { margin: 0 -4px; width: calc(100% + 8px); } }
+  @media (max-width: 700px) { .chain { grid-template-columns: 1fr; } .cascade { grid-template-columns: 1fr; gap: 16px; } .cascade li + li::before { content: "\2193"; left: 50%; top: -27px; transform: translateX(-50%); background: none; font-size: 1.1rem; }
+    .cascade { gap: 30px; } .cascade li { border-top-width: 1px; padding: 18px 20px; font-size: .98rem; border-radius: 16px; } .cascade li.hit { padding: 20px; } .course .subset { margin-left: 10px; padding-left: 16px; } }
+  .hl { --hl1: rgba(222,244,140,.95); --hl2: rgba(206,236,105,.9); font-weight: 600; padding: 0 .25em; margin: 0 -.1em; border-radius: .2em .6em .3em .8em; background-image: linear-gradient(101deg, transparent 0%, var(--hl1) 2.5%, var(--hl2) 60%, var(--hl1) 94%, transparent 100%); background-size: 100% 58%; background-position: 0 92%; background-repeat: no-repeat; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hl { --hl1: rgba(160,185,60,.55); --hl2: rgba(150,175,50,.6); } }
+  :root[data-theme="dark"] .hl { --hl1: rgba(160,185,60,.55); --hl2: rgba(150,175,50,.6); }
+  .two ul { list-style: none; padding: 0; margin: 0; }
+  .two li { background: var(--tint); border-radius: 18px 18px 18px 4px; padding: 12px 18px; margin: 0 0 12px; }
+  table:not(.compare) td:nth-child(even):not(.k) { background: color-mix(in srgb, var(--tint) 60%, var(--surface)); }
+  table:not(.compare) th:nth-child(even) { background: color-mix(in srgb, var(--tint) 100%, var(--surface)); }
+  table:not(.compare) td:nth-child(odd):not(.k) { background: var(--surface); }
+  table.compare th:nth-child(2) { background: var(--lime); color: #25232b; }
+  table.compare td:nth-child(2) { background: color-mix(in srgb, var(--lime) 38%, var(--surface)); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) table.compare td:nth-child(2) { background: color-mix(in srgb, var(--lime) 16%, var(--surface)); } }
+  :root[data-theme="dark"] table.compare td:nth-child(2) { background: color-mix(in srgb, var(--lime) 16%, var(--surface)); }
+  table.compare th:nth-child(3) { background: var(--cell); color: var(--muted); }
+  table.compare td:nth-child(3) { background: var(--surface); color: var(--muted); }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+  @media (max-width: 700px) {
+    body { font-size: 18.5px; }
+    .cards, .two { grid-template-columns: 1fr; }
+    .cycle { grid-template-columns: 1fr 1fr; }
+    header.top { flex-direction: column; align-items: center; gap: 16px; padding: 22px 0 10px; }
+    nav.links { justify-content: center; gap: 7px 6px; font-size: .8rem; }
+    nav.links a, nav.links span { padding: 6px 10px; border: 1px solid var(--rule); border-radius: 999px; background: var(--surface); }
+    nav.links a[aria-current] { background: var(--lime); border-color: var(--lime); color: #25232b; text-decoration: none; }
+    table, tr, th, td { display: block; width: 100%; }
+    table { border: 0; border-radius: 0; overflow: visible; }
+    tr:first-child:has(th) { display: none; }
+    tr { border: 1.5px solid var(--rule); border-radius: 16px; margin: 0 0 12px; overflow: hidden; }
+    td { border: 0; border-top: 1px solid var(--rule); }
+    tr > td:first-child { border-top: 0; }
+    td.k { width: auto; }
+    td[data-label]::before { content: attr(data-label); display: block; font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: .74rem; font-weight: 600; color: var(--ink); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 3px; }
+  }
+</style>
+</head>
+<body class="beh">
+<div class="wrap">
+<header class="top" id="top" tabindex="-1" style="outline:none"><a class="brand" href="index.html">Enjoy school</a><nav class="links" aria-label="Pages"><a href="index.html">Home</a><a href="understanding.html">Understanding</a><a href="capacity.html">Capacity</a><a href="burnout.html">Burnout</a><a href="behaviour.html" aria-current="page">Behaviour</a><a href="law.html">The law</a><a href="support.html">Support</a><a href="what-you-do.html">Advocate's role</a></nav></header>
+<div class="hero inner"><div class="col"><p class="eyebrow">Step 4, worked example a</p><h1>A thrown chair, two responses</h1><p class="lead">The same incident, handled two ways. One punishes the behaviour. The other removes the cause. This example is fictional, built from patterns common in published cases and in what families report.</p></div></div>
+
+<section class="sec reveal" id="s1"><div class="col"><div class="head"><span class="num">1</span><h2>What happened</h2></div>
+<p class="gist">A Year 5 autistic student throws a chair in class. No one is hurt.</p>
+<ul class="journey">
+  <li><span class="jn">1</span><div><b>Morning</b><p>His usual teacher is away. A relief teacher arrives. No one told him.</p></div></li>
+  <li><span class="jn">2</span><div><b>The routine changes</b><p>The relief teacher runs the lesson differently, and calls on students without warning.</p></div></li>
+  <li><span class="jn">3</span><div><b>Put on the spot</b><p>He is asked a question in front of the class. He freezes. He is told off for not paying attention.</p></div></li>
+  <li><span class="jn">4</span><div><b>The chair</b><p>He stands, shouts, and throws his chair across the room.</p></div></li>
+</ul>
+
+</div></section><section class="sec reveal" id="s2"><div class="col"><div class="head"><span class="num">2</span><h2>Where the discrimination is hidden</h2></div>
+<p class="gist">The behaviour was predictable. The school knew he finds unannounced change and public pressure very hard.</p>
+<ol class="cascade">
+  <li>Change with no warning</li>
+  <li>Public pressure, then a reprimand</li>
+  <li class="hit">Load goes past capacity, and he loses control<small>The behaviour is part of the disability</small></li>
+  <li>Suspended for violence</li>
+  <li class="end">He learns school is not safe, and the next relief day is worse</li>
+</ol>
+<ul>
+  <li>Under the Disability Discrimination Act, a disability includes "behaviour that is a symptom or manifestation of the disability" (section 4, added in 2009 after Purvis v New South Wales).</li>
+  <li>Nothing in his plan prepared him for a relief day, and the relief teacher had not seen his plan.</li>
+  <li>Suspension treats the chair as a choice. It removes him from school, and changes nothing that caused it.</li>
+</ul>
+
+</div></section><section class="sec reveal" id="s3"><div class="col"><div class="head"><span class="num">3</span><h2>Two ways to respond</h2></div>
+<div class="tw"><table class="compare">
+  <tr><th style="width:22%"></th><th>Neuroaffirming</th><th>Usual response</th></tr>
+  <tr><td class="k">In the moment</td><td>Clear the room. An adult he knows comes to him. Few words.</td><td>Raised voices, then removal to the office.</td></tr>
+  <tr><td class="k">The question asked</td><td>What happened just before, and what did it require of him?</td><td>What did he do, and what is the consequence?</td></tr>
+  <tr><td class="k">Consequence</td><td>Repair once he is calm: helping put the room right, and talking it through in a way that suits him.</td><td>Suspension and a behaviour contract.</td></tr>
+  <tr><td class="k">What changes</td><td>He is told the day before when a relief teacher is coming. His plan goes to every relief teacher. No cold-calling. An exit card to a set place.</td><td>Nothing about the day. He is told to manage his reactions.</td></tr>
+  <tr><td class="k">How it is checked</td><td>Reviewed after the next three relief days.</td><td>Further breaches lead to an enrolment review.</td></tr>
+</table></div>
+
+</div></section><section class="sec reveal" id="s4"><div class="col"><div class="head"><span class="num">4</span><h2>Why this is not soft</h2></div>
+<p class="gist">It takes the safety risk more seriously. It stops the next chair being thrown. A suspension does not.</p>
+<ul>
+  <li>Expectations stay the same: no one throws chairs. What changes is the school removing what caused it.</li>
+  <li>The repair is real. He helps put things right, once he is able to.</li>
+  <li>The plan is judged on results: calmer relief days, and no repeat.</li>
+  <li>School-wide positive behaviour approaches reduce suspensions and office referrals (Bradshaw, Mitchell and Leaf 2010, <i>Journal of Positive Behavior Interventions</i>).</li>
+</ul>
+<div class="note"><p><b>Questions to ask after any incident:</b> What happened just before? Did the staff involved know his plan? What adjustment was in place? What will change so it does not happen again?</p></div>
+</div></section><div class="nextstep reveal"><p class="eyebrow">Next, step 5</p><a class="go" href="law.html#top"><b>The law</b><span>What the school must do, and how it decides what is reasonable.</span><i aria-hidden="true">&rarr;</i></a></div><div class="nextprev"><a href="behaviour.html">&larr; Back to behaviour</a></div>
+<p class="footer">General information for parents, not legal advice. Free help: Family Advocacy NSW (family-advocacy.com), Australian Centre for Disability Law (disabilitylaw.org.au), Australian Human Rights Commission 1300 656 419. November 2026.</p>
+</div>
+<script>
+(function(){
+  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch(e) {}
+  function toTop(){ try { window.scrollTo(0, 0); var t = document.getElementById('top'); if (t) { t.scrollIntoView({block:'start'}); t.focus({preventScroll:false}); } } catch(e) {} }
+  if (!location.hash || location.hash === '#top') { toTop(); window.addEventListener('load', toTop); setTimeout(toTop, 150); }
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.08});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+  document.querySelectorAll('table').forEach(function(t){
+    var first=t.querySelector('tr'); if(!first) return;
+    var heads=Array.prototype.map.call(first.querySelectorAll('th'), function(th){ return th.textContent.trim(); });
+    if(!heads.length) return;
+    Array.prototype.slice.call(t.querySelectorAll('tr'),1).forEach(function(tr){
+      Array.prototype.forEach.call(tr.children, function(td,i){ if(heads[i] && !td.classList.contains('k')) td.setAttribute('data-label', heads[i]); });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
