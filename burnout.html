@@ -286,7 +286,8 @@
 .chart .demand.m { color: var(--muted); font-weight: 400; }
 .charthint { font-size: .9rem; color: var(--muted); margin: 10px 0 0; }
 @media (min-width: 1000px) {
-  .chart, .legend, .charthint { width: 960px; max-width: calc(100vw - 48px); position: relative; left: 50%; transform: translateX(-50%); }
+  .tpanel:has(.chart) { width: 1000px; max-width: calc(100vw - 48px); position: relative; left: 50%; transform: translateX(-50%); }
+  .tpanel:has(.circfig) { width: 880px; max-width: calc(100vw - 48px); position: relative; left: 50%; transform: translateX(-50%); }
   .chart .row { grid-template-columns: 215px minmax(0, 1fr) 36px minmax(0, 2fr); padding: 3px 8px; }
   .chart .group { margin: 8px 0 2px; }
   .chart .demand { grid-column: auto; margin: 0; font-size: .76rem; line-height: 1.22; display: block !important; }
