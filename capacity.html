@@ -141,6 +141,7 @@
   .course .subset li { margin: 0 0 10px; }
   .course .subset .n { width: 40px; height: 40px; font-size: .85rem; background: var(--tint); color: var(--ink); }
   .upnext { text-align: center; }
+  @media (max-width: 700px) { .circfig { padding: 10px 8px 16px; } .circfig svg { margin: 0 -4px; width: calc(100% + 8px); } }
   @media (max-width: 700px) { .chain { grid-template-columns: 1fr; } .cascade { grid-template-columns: 1fr; gap: 16px; } .cascade li + li::before { content: "\2193"; left: 50%; top: -27px; transform: translateX(-50%); background: none; font-size: 1.1rem; }
     .cascade { gap: 30px; } .cascade li { border-top-width: 1px; padding: 18px 20px; font-size: .98rem; border-radius: 16px; } .cascade li.hit { padding: 20px; } .course .subset { margin-left: 10px; padding-left: 16px; } }
   .hl { --hl1: rgba(222,244,140,.95); --hl2: rgba(206,236,105,.9); font-weight: 600; padding: 0 .25em; margin: 0 -.1em; border-radius: .2em .6em .3em .8em; background-image: linear-gradient(101deg, transparent 0%, var(--hl1) 2.5%, var(--hl2) 60%, var(--hl1) 94%, transparent 100%); background-size: 100% 58%; background-position: 0 92%; background-repeat: no-repeat; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
@@ -305,7 +306,7 @@
 </div>
 
 <div class="circfig">
-  <svg id="circ" viewBox="0 0 520 400" role="img" aria-labelledby="capt-title"><g id="circ-g"></g></svg>
+  <svg id="circ" viewBox="33 30 454 330" role="img" aria-labelledby="capt-title"><g id="circ-g"></g></svg>
   <div class="caption" aria-live="polite">
     <b id="capt-title"></b>
     <p id="capt-text"></p>
