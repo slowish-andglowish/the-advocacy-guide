@@ -453,5 +453,13 @@
   }); });
 })();
 </script>
+<script>
+(function(){
+  var svg=document.getElementById('circ'), g=document.getElementById('circ-g'); if(!svg||!g) return;
+  function fit(){ try { var b=g.getBBox(); if(!b.width) return; var pad=14; svg.setAttribute('viewBox',(b.x-pad)+' '+(b.y-pad)+' '+(b.width+2*pad)+' '+(b.height+2*pad)); } catch(e) {} }
+  new MutationObserver(function(){ requestAnimationFrame(fit); }).observe(g,{childList:true,subtree:true});
+  window.addEventListener('load', fit); fit();
+})();
+</script>
 </body>
 </html>
